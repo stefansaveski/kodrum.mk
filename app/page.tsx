@@ -83,9 +83,7 @@ export default function Home() {
             <FontAwesomeIcon icon={faInstagram} className="w-6 h-6" />
           </a>
           <div className="inline-flex items-center gap-2 px-3 py-1 p-3 lg:p-3 lg:px-5 ml-0 lg:ml-5 rounded-full bg-teal-100 text-teal-700 text-sm font-medium w-fit hover:scale-120 transition-transform cursor-pointer">
-            <Link href="https://discord.gg/YVXYpMQra5">
-              Join our Discord
-            </Link>
+            <Link href="https://discord.gg/YVXYpMQra5">Join our Discord</Link>
           </div>
         </div>
       </section>
@@ -142,7 +140,10 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section id="events" className="flex flex-col w-full justify-center items-center mt-10">
+      <section
+        id="events"
+        className="flex flex-col w-full justify-center items-center mt-10"
+      >
         <h1 className="text-2xl md:text-4xl text-shadow-sm mb-5 bg-teal-500 p-2 md:p-4 rounded-full text-white font-lg">
           Календар за настани
         </h1>
@@ -186,11 +187,14 @@ export default function Home() {
           </h1>
           <ul className="space-y-3 mt-4 flex flex-col">
             {[
-              "Структруно Програмирање",
+              "Структруно програмирање",
               "Објектно-ориентирано програмирање",
-              "Алгоритми и Податочни структури",
+              "Алгоритми и податочни структури",
               "Вештачка интелигенција",
-              "Оперативни системи",
+              "Интернет програмирање на клиентска страна",
+              "Шаблони за дизајн на кориснички интерфејс",
+              "Избрани теми од математика",
+              "Бизнис статистика",
             ].map((item, idx) => (
               <li
                 key={idx}
