@@ -72,7 +72,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex items-center mr-5">
+        <div className="flex items-center mr-5 lg:mb-0 mb-5 justify-center">
           <a
             href="https://instagram.com/kodrum_mk"
             target="_blank"
