@@ -120,3 +120,61 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* FullCalendar custom styles for better text visibility */
+.fc {
+  /* Day numbers */
+  .fc-daygrid-day-number {
+    color: #1f2937 !important;
+    font-weight: 600 !important;
+    font-size: 1rem !important;
+  }
+  
+  /* Event text */
+  .fc-event-title {
+    color: white !important;
+    font-weight: 600 !important;
+    font-size: 0.875rem !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3) !important;
+  }
+  
+  /* Day header text (Mon, Tue, etc.) */
+  .fc-col-header-cell-cushion {
+    color: #374151 !important;
+    font-weight: 700 !important;
+    font-size: 0.875rem !important;
+  }
+  
+  /* Month/Year title */
+  .fc-toolbar-title {
+    color: #1f2937 !important;
+    font-weight: 700 !important;
+  }
+  
+  /* Today's date highlighting */
+  .fc-day-today {
+    background-color: rgba(20, 184, 166, 0.1) !important;
+  }
+  
+  .fc-day-today .fc-daygrid-day-number {
+    color: #0f766e !important;
+    font-weight: 700 !important;
+  }
+  
+  /* Event hover effects */
+  .fc-event:hover {
+    opacity: 0.9 !important;
+    transform: scale(1.02) !important;
+    transition: all 0.2s ease !important;
+  }
+  
+  /* Grid lines for better visibility */
+  .fc-daygrid-day {
+    border-color: #e5e7eb !important;
+  }
+  
+  /* Weekend styling */
+  .fc-day-sat, .fc-day-sun {
+    background-color: rgba(249, 250, 251, 0.5) !important;
+  }
+}

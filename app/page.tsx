@@ -87,8 +87,8 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="bg-cover bg-center w-full lg:h-100 bg-[url('/hero.jpg')] rounded flex flex-col lg:flex-row">
-        <div className="bg-gradient-to-b lg:bg-gradient-to-r from-teal-600/65 via-teal-600/65 to-teal-600/0 rounded w-full lg:w-200 h-full ml-0  p-4">
+      <section className="bg-cover bg-center w-full lg:h-150 bg-[url('/hero.jpg')] rounded flex flex-col lg:flex-row">
+        <div className="bg-gradient-to-b lg:bg-gradient-to-r from-teal-600/65 via-teal-600/65 to-teal-600/0 rounded w-full lg:w-200 h-full ml-0 p-4 flex flex-col justify-center">
           <div className="inline-flex items-center gap-2 px-3 py-1 p-3 lg:p-3 ml-0 lg:ml-5 mt-5 rounded-full bg-teal-100 text-teal-700 text-sm font-medium w-fit">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
@@ -110,19 +110,34 @@ export default function Home() {
           <h1 className="text-white text-shadow-md drop-shadow-sm font-bold text-2xl md:text-3xl text-center bg-teal-600/65 rounded-full w-full lg:w-150 m-3 lg:m-5 p-2">
             Пријави се на следен настан!
           </h1>
-          <div className="flex">
-            <div className=" bg-teal-600/65 rounded-xl flex flex-col justify-between m-2 p-4">
-              <h2 className="p-2 font-bold text-xl md:text-2xl text-center text-[#FDFBD4] text-shadow-md drop-shadow-sm m-2">
-                <span className="text-white">
-                  Тридневна припрема/подготовка
-                </span>{" "}
-                <br></br>Структурно Програмирање
-              </h2>
-              <Button className="p-3 md:p-5 m-2 text-base md:text-lg font-bold cursor-pointer hover:scale-110">
-                <Link href="https://forms.gle/PxPqb3dFHMzkNiDYA">
-                  Аплицирај
-                </Link>
-              </Button>
+          <div className="flex flex-col w-full gap-2">
+            <div className="flex flex-col sm:flex-row">
+              <div className=" bg-teal-600/65 rounded-xl flex flex-col justify-between m-2 p-4">
+                <h2 className="p-2 font-bold text-xl md:text-2xl text-center text-[#FDFBD4] text-shadow-md drop-shadow-sm m-2">
+                  <span className="text-white">
+                    Шестдневна припрема/подготовка
+                  </span>{" "}
+                  <br></br>Математика 1 / Калкулус
+                </h2>
+                <Button className="p-3 md:p-5 m-2 text-base md:text-lg font-bold cursor-pointer hover:scale-110">
+                  <Link href="https://forms.gle/L7c7RZNqvuNmmp4h7">
+                    Аплицирај
+                  </Link>
+                </Button>
+              </div>
+              <div className=" bg-teal-600/65 rounded-xl flex flex-col justify-between m-2 p-4">
+                <h2 className="p-2 font-bold text-xl md:text-2xl text-center text-[#FDFBD4] text-shadow-md drop-shadow-sm m-2">
+                  <span className="text-white">
+                    Тридневна припрема/подготовка
+                  </span>{" "}
+                  <br></br>Структурно Програмирање
+                </h2>
+                <Button className="p-3 md:p-5 m-2 text-base md:text-lg font-bold cursor-pointer hover:scale-110">
+                  <Link href="https://forms.gle/PxPqb3dFHMzkNiDYA">
+                    Аплицирај
+                  </Link>
+                </Button>
+              </div>
             </div>
             <div className=" bg-teal-600/65 rounded-xl flex flex-col justify-between m-2 p-4">
               <h2 className="p-2 font-bold text-xl md:text-2xl text-center text-[#FDFBD4] text-shadow-md drop-shadow-sm m-2">
@@ -147,7 +162,7 @@ export default function Home() {
         <h1 className="text-2xl md:text-4xl text-shadow-sm mb-5 bg-teal-500 p-2 md:p-4 rounded-full text-white font-lg">
           Календар за настани
         </h1>
-        <div className="w-full md:w-1/2">
+        <div className="w-full md:w-1/2 calendar-custom">
           <FullCalendar
             plugins={[dayGridPlugin]}
             initialView="dayGridMonth"
@@ -158,14 +173,20 @@ export default function Home() {
             }}
             weekends={true}
             events={[
-              { title: "Day 1 - Структурно", date: "2025-08-21" },
-              { title: "Day 2 - Структурно", date: "2025-08-22" },
-              { title: "Day 3 - Структурно", date: "2025-08-23" },
+              { title: "Структурно Д1", date: "2025-08-21" },
+              { title: "Структурно Д2", date: "2025-08-22" },
+              { title: "Структурно Д3", date: "2025-08-23" },
               { title: "Испит Структруно", date: "2025-08-25" },
               { title: "Испит Алгоритми", date: "2025-09-01" },
-              { title: "Day 1 - Алгоритми", date: "2025-08-29" },
-              { title: "Day 2 - Алгоритми", date: "2025-08-30" },
-              { title: "Day 3 - Алгоритми", date: "2025-08-31" },
+              { title: "Алгоритми Д1", date: "2025-08-29" },
+              { title: "Алгоритми Д2", date: "2025-08-30" },
+              { title: "Алгоритми Д3", date: "2025-08-31" },
+              { title: "Калкулус Д1", date: "2025-08-18" },
+              { title: "Калкулус Д2", date: "2025-08-19" },
+              { title: "Калкулус Д3", date: "2025-08-20" },
+              { title: "Калкулус Д4", date: "2025-08-22" },
+              { title: "Калкулус Д5", date: "2025-08-23" },
+              { title: "Калкулус Д6", date: "2025-08-24" },
             ]}
             eventBackgroundColor="#14b8a6"
             eventBorderColor="#14b8a6"
@@ -182,8 +203,8 @@ export default function Home() {
         className="flex flex-col lg:flex-row justify-center items-center w-full mt-10 gap-4"
       >
         <div className="flex flex-col ml-5 w-full lg:w-1/3 px-2 justify-center items-center">
-          <h1 className="text-2xl md:text-4xl text-teal-500 w-full md:w-full text-center">
-            Индивидуални часови
+          <h1 className="text-2xl md:text-4xl text-teal-500 w-full md:w-full text-center m-2">
+            Индивидуални часови - ФИНКИ
           </h1>
           <ul className="space-y-3 mt-4 flex flex-col">
             {[
@@ -192,9 +213,18 @@ export default function Home() {
               "Алгоритми и податочни структури",
               "Вештачка интелигенција",
               "Интернет програмирање на клиентска страна",
+              "Основи/Напреден Веб Дизајн",
               "Шаблони за дизајн на кориснички интерфејс",
               "Избрани теми од математика",
               "Бизнис статистика",
+              "Математика 1",
+              "Калкулус 1",
+              "Калкулус 2",
+              "Математика 2 / Дискретна Мат.",
+              "Основи на теорија на информации",
+              "Компјутерски мрежи и безбедност",
+              "Оперативни системи",
+              "Архитектура и организација на компјутери",
             ].map((item, idx) => (
               <li
                 key={idx}
@@ -220,9 +250,14 @@ export default function Home() {
             ))}
           </ul>
         </div>
-        <div className="w-full sm:w-2/3 md:w-1/2 lg:w-1/2 flex flex-col sm:flex-row justify-center items-center">
-          <div className="w-full sm:w-1/2 flex justify-center">
-            <Card className="bg-teal-600/80 rounded-xl shadow-lg text-white p-4">
+        <div className="w-full sm:w-2/3 md:w-1/2 lg:w-1/2 flex flex-col sm:flex-col justify-center items-center">
+          <div className="p-3">
+            <h1 className="text-2xl md:text-4xl text-teal-500 w-full md:w-full text-center">
+              Нашиот кадар
+            </h1>
+          </div>
+          <div className="w-full sm:w-1/2 flex flex-col sm:flex-row justify-center">
+            <Card className="bg-teal-600/80 rounded-xl shadow-lg text-white p-4 m-2">
               <CardHeader className="flex flex-col items-center">
                 <CardTitle className="text-xl font-bold flex items-center gap-2">
                   <FontAwesomeIcon
@@ -278,16 +313,14 @@ export default function Home() {
                 </a>
               </CardFooter>
             </Card>
-          </div>
-          <div className="w-full sm:w-1/2 flex justify-center">
-            <Card className="bg-teal-600/80 rounded-xl shadow-lg text-white p-4">
+            <Card className="bg-teal-600/80 rounded-xl shadow-lg text-white p-4 m-2">
               <CardHeader className="flex flex-col items-center">
                 <CardTitle className="text-xl font-bold flex items-center gap-2">
                   <FontAwesomeIcon
                     icon={faUser}
                     className="text-teal-200 w-5 h-5"
                   />{" "}
-                  Boris Gjorgjievski
+                  Boris Gj.
                 </CardTitle>
                 <CardDescription className="text-teal-200 text-base">
                   Competitive Programmer
@@ -333,6 +366,178 @@ export default function Home() {
                   className="bg-teal-500 text-white font-bold px-4 py-1 rounded-lg hover:bg-teal-700 transition-all text-sm flex items-center justify-center"
                 >
                   Book a session
+                </a>
+              </CardFooter>
+            </Card>
+          </div>
+          <div className="w-full sm:w-1/2 flex flex-col sm:flex-row justify-center">
+            <Card className="bg-teal-600/80 rounded-xl shadow-lg text-white p-4 m-2">
+              <CardHeader className="flex flex-col items-center">
+                <CardTitle className="text-xl font-bold flex items-center gap-2">
+                  <FontAwesomeIcon
+                    icon={faUser}
+                    className="text-teal-200 w-5 h-5"
+                  />{" "}
+                  Borjan Dimeski
+                </CardTitle>
+                <CardDescription className="text-teal-200 text-base">
+                  Mathematician / Programmer
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-2">
+                <div className="flex items-center gap-2">
+                  <FontAwesomeIcon
+                    icon={faPhone}
+                    className="text-teal-200 w-4 h-4"
+                  />
+                  <span className="text-sm">071 499 333</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <FontAwesomeIcon
+                    icon={faEnvelope}
+                    className="text-teal-200 w-4 h-4"
+                  />
+                  <a
+                    href="mailto:dimeskiborjan@gmail.com"
+                    className="text-teal-200 hover:underline text-sm"
+                  >
+                    dimeskiborjan@gmail.com
+                  </a>
+                </div>
+                <div className="flex items-center gap-2">
+                  <FontAwesomeIcon
+                    icon={faInstagram}
+                    className="text-teal-200 w-4 h-4"
+                  />
+                  <a
+                    href="https://www.instagram.com/b_dimeski/"
+                    className="text-teal-200 hover:underline text-sm"
+                    target="_blank"
+                  >
+                    @b_dimeski
+                  </a>
+                </div>
+              </CardContent>
+              <CardFooter className="flex justify-center">
+                <a
+                  href="sms:"
+                  className="bg-teal-500 text-white font-bold px-4 py-1 rounded-lg hover:bg-teal-700 transition-all text-sm flex items-center justify-center"
+                >
+                  Booked out.
+                </a>
+              </CardFooter>
+            </Card>
+            <Card className="bg-teal-600/80 rounded-xl shadow-lg text-white p-4 m-2">
+              <CardHeader className="flex flex-col items-center">
+                <CardTitle className="text-xl font-bold flex items-center gap-2">
+                  <FontAwesomeIcon
+                    icon={faUser}
+                    className="text-teal-200 w-5 h-5"
+                  />{" "}
+                  Petar Hristovski
+                </CardTitle>
+                <CardDescription className="text-teal-200 text-base">
+                  Full Stack Developer @ EaseAccess24
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-2">
+                <div className="flex items-center gap-2">
+                  <FontAwesomeIcon
+                    icon={faPhone}
+                    className="text-teal-200 w-4 h-4"
+                  />
+                  <span className="text-sm">071 506 808</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <FontAwesomeIcon
+                    icon={faEnvelope}
+                    className="text-teal-200 w-4 h-4"
+                  />
+                  <a
+                    href="mailto:petarhristovski23@gmail.com"
+                    className="text-teal-200 hover:underline text-sm"
+                  >
+                    petarhristovski23@gmail.com
+                  </a>
+                </div>
+                <div className="flex items-center gap-2">
+                  <FontAwesomeIcon
+                    icon={faInstagram}
+                    className="text-teal-200 w-4 h-4"
+                  />
+                  <a
+                    href="https://www.instagram.com/hristovski.exe/"
+                    className="text-teal-200 hover:underline text-sm"
+                    target="_blank"
+                  >
+                    @hristovski.exe
+                  </a>
+                </div>
+              </CardContent>
+              <CardFooter className="flex justify-center">
+                <a
+                  href="sms:071506808"
+                  className="bg-teal-500 text-white font-bold px-4 py-1 rounded-lg hover:bg-teal-700 transition-all text-sm flex items-center justify-center"
+                >
+                  Book a session
+                </a>
+              </CardFooter>
+            </Card>
+          </div>
+          <div className="w-full sm:w-1/2 flex flex-col sm:flex-row justify-center">
+            <Card className="bg-teal-600/80 rounded-xl shadow-lg text-white p-4 m-2">
+              <CardHeader className="flex flex-col items-center">
+                <CardTitle className="text-xl font-bold flex items-center gap-2">
+                  <FontAwesomeIcon
+                    icon={faUser}
+                    className="text-teal-200 w-5 h-5"
+                  />{" "}
+                  Hristijan Saveski
+                </CardTitle>
+                <CardDescription className="text-teal-200 text-base">
+                  Senior Cloud Engineer
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-2">
+                <div className="flex items-center gap-2">
+                  <FontAwesomeIcon
+                    icon={faPhone}
+                    className="text-teal-200 w-4 h-4"
+                  />
+                  <span className="text-sm">075 223 867</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <FontAwesomeIcon
+                    icon={faEnvelope}
+                    className="text-teal-200 w-4 h-4"
+                  />
+                  <a
+                    href="mailto:hristijansaveski17@gmail.com"
+                    className="text-teal-200 hover:underline text-sm"
+                  >
+                    hristijansaveski17@gmail.com
+                  </a>
+                </div>
+                <div className="flex items-center gap-2">
+                  <FontAwesomeIcon
+                    icon={faInstagram}
+                    className="text-teal-200 w-4 h-4"
+                  />
+                  <a
+                    href="https://www.instagram.com/hristijan_saveski17/"
+                    className="text-teal-200 hover:underline text-sm"
+                    target="_blank"
+                  >
+                    @hristijan_saveski17
+                  </a>
+                </div>
+              </CardContent>
+              <CardFooter className="flex justify-center">
+                <a
+                  href="sms:"
+                  className="bg-teal-500 text-white font-bold px-4 py-1 rounded-lg hover:bg-teal-700 transition-all text-sm flex items-center justify-center"
+                >
+                  DevOps Consulting
                 </a>
               </CardFooter>
             </Card>
