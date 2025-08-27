@@ -1,0 +1,81 @@
+{
+  "nav": {
+    "home": "Home",
+    "events": "Events",
+    "courses": "Courses",
+    "about": "About",
+    "blog": "Blog",
+    "contact": "Contact",
+    "faq": "FAQ",
+    "enrollNow": "Enroll Now"
+  },
+  "hero": {
+    "title": "Transform Your Future with Technology",
+    "subtitle": "Learn programming, mathematics, and IT skills from industry experts. Courses designed for all ages - from kids to career changers.",
+    "cta": "Start Learning Today",
+    "learnMore": "Learn More",
+    "upcoming": "Upcoming Events & Courses",
+    "upcoming-description": "Stay updated with our latest course schedules and special events.",
+    "why-kodrum": "Why Choose Kodrum?",
+    "why-kodrum-description": "Discover what makes us Macedonia's premier technology education center"
+  },
+  "courses": {
+    "title": "Our Courses",
+    "subtitle": "Comprehensive learning paths for every age group and skill level",
+    "active-courses": "Active Courses",
+    "active-courses-description": "Join our currently running courses and start your learning journey today",
+    "categories": {
+      "kids": "Kids (7-12)",
+      "teens": "Teens (High School)",
+      "university": "University Students",
+      "adults": "Adults / Career Changers",
+      "individual": "Individual Classes"
+    },
+    "programming": {
+      "title": "Programming Courses",
+      "structuredProgramming": "Structured Programming",
+      "objectOriented": "Object-Oriented Programming",
+      "algorithms": "Algorithms and Data Structures",
+      "ai": "Artificial Intelligence",
+      "clientSide": "Client-Side Internet Programming",
+      "webDesign": "Fundamentals/Advanced Web Design",
+      "uiDesign": "User Interface Design Patterns"
+    },
+    "math": {
+      "title": "Mathematics Courses",
+      "selectedTopics": "Selected Topics in Mathematics",
+      "businessStats": "Business Statistics",
+      "math1": "Mathematics 1",
+      "calculus1": "Calculus 1",
+      "calculus2": "Calculus 2",
+      "math2": "Mathematics 2 / Discrete Math"
+    },
+    "other": {
+      "title": "Other IT Courses",
+      "infoTheory": "Fundamentals of Information Theory",
+      "networks": "Computer Networks and Security",
+      "os": "Operating Systems",
+      "architecture": "Computer Architecture and Organization"
+    }
+  },
+  "about": {
+    "title": "About Our Learning Center",
+    "mission": "Our Mission",
+    "vision": "Our Vision",
+    "values": "Our Values"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "getInTouch": "Get in Touch",
+    "address": "Address",
+    "phone": "Phone",
+    "email": "Email",
+    "hours": "Working Hours"
+  },
+  "footer": {
+    "description": "Empowering learners of all ages with cutting-edge technology education.",
+    "newsletter": "Subscribe to Newsletter",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  }
+}
