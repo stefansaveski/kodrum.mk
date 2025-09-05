@@ -16,7 +16,6 @@
    ```
 
 ## Running the Project
-
-    ```bash
-    pnpm run dev
-    ```
+```bash
+   pnpm run dev
+   ```
