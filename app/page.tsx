@@ -87,7 +87,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="bg-cover bg-center w-full lg:h-150 bg-[url('/hero.jpg')] rounded flex flex-col lg:flex-row">
+      <section className="bg-cover bg-center w-full lg:h-170 bg-[url('/hero.jpg')] rounded flex flex-col lg:flex-row">
         <div className="bg-gradient-to-b lg:bg-gradient-to-r from-teal-600/65 via-teal-600/65 to-teal-600/0 rounded w-full lg:w-200 h-full ml-0 p-4 flex flex-col justify-center">
           <div className="inline-flex items-center gap-2 px-3 py-1 p-3 lg:p-3 ml-0 lg:ml-5 mt-5 rounded-full bg-teal-100 text-teal-700 text-sm font-medium w-fit">
             <span className="relative flex h-2 w-2">
@@ -115,12 +115,12 @@ export default function Home() {
               <div className=" bg-teal-600/65 rounded-xl flex flex-col justify-between m-2 p-4">
                 <h2 className="p-2 font-bold text-xl md:text-2xl text-center text-[#FDFBD4] text-shadow-md drop-shadow-sm m-2">
                   <span className="text-white">
-                    Шестдневна припрема/подготовка
+                    Тридневна припрема/подготовка
                   </span>{" "}
                   <br></br>Математика 1 / Калкулус
                 </h2>
                 <Button className="p-3 md:p-5 m-2 text-base md:text-lg font-bold cursor-pointer hover:scale-110">
-                  <Link href="https://forms.gle/L7c7RZNqvuNmmp4h7">
+                  <Link href="https://docs.google.com/forms/d/e/1FAIpQLSfX4akgjHUe0PPcp5w128ee7180NzuvV77HVT3v6DRYfyxn2w/viewform?usp=send_form">
                     Аплицирај
                   </Link>
                 </Button>
@@ -133,24 +133,39 @@ export default function Home() {
                   <br></br>Структурно Програмирање
                 </h2>
                 <Button className="p-3 md:p-5 m-2 text-base md:text-lg font-bold cursor-pointer hover:scale-110">
-                  <Link href="https://forms.gle/PxPqb3dFHMzkNiDYA">
+                  <Link href="https://docs.google.com/forms/d/e/1FAIpQLSeIUCRY7S6jh2cgI2WbjJyNyn8l9mLqXQQNaysUhO6WoQQIAg/viewform">
                     Аплицирај
                   </Link>
                 </Button>
               </div>
             </div>
-            <div className=" bg-teal-600/65 rounded-xl flex flex-col justify-between m-2 p-4">
-              <h2 className="p-2 font-bold text-xl md:text-2xl text-center text-[#FDFBD4] text-shadow-md drop-shadow-sm m-2">
-                <span className="text-white">
-                  Тридневна припрема/подготовка
-                </span>{" "}
-                <br></br> Алгоритми и Податочни Структури
-              </h2>
-              <Button className="p-3 md:p-5 m-2 text-base md:text-lg font-bold cursor-pointer hover:scale-110">
-                <Link href="https://forms.gle/Bek96ixvsJ4T9Y1a6">
-                  Аплицирај
-                </Link>
-              </Button>
+            <div className="flex flex-col sm:flex-row">
+              <div className=" bg-teal-600/65 rounded-xl flex flex-col justify-between m-2 p-4">
+                <h2 className="p-2 font-bold text-xl md:text-2xl text-center text-[#FDFBD4] text-shadow-md drop-shadow-sm m-2">
+                  <span className="text-white">
+                    Тридневна припрема/подготовка
+                  </span>{" "}
+                  <br></br>Алгоритми и Податочни Структури
+                </h2>
+                <Button className="p-3 md:p-5 m-2 text-base md:text-lg font-bold cursor-pointer hover:scale-110">
+                  <Link href="https://docs.google.com/forms/d/e/1FAIpQLSfz0byXqSp_pCedR_jaCq9UFpLsmVjcNQuzCQWMftY5IkbUuQ/viewform">
+                    Аплицирај
+                  </Link>
+                </Button>
+              </div>
+              <div className=" bg-teal-600/65 rounded-xl flex flex-col justify-between m-2 p-4">
+                <h2 className="p-2 font-bold text-xl md:text-2xl text-center text-[#FDFBD4] text-shadow-md drop-shadow-sm m-2">
+                  <span className="text-white">
+                    Тридневна припрема/подготовка
+                  </span>{" "}
+                  <br></br>Веројатност и Статистика
+                </h2>
+                <Button className="p-3 md:p-5 m-2 text-base md:text-lg font-bold cursor-pointer hover:scale-110">
+                  <Link href="https://docs.google.com/forms/d/e/1FAIpQLSfmbere0wunaWqz8EFgQDIiPDTSBFsyNCRLsv57yJOp9VCcmQ/viewform">
+                    Аплицирај
+                  </Link>
+                </Button>
+              </div>
             </div>
           </div>
         </div>
@@ -166,27 +181,30 @@ export default function Home() {
           <FullCalendar
             plugins={[dayGridPlugin]}
             initialView="dayGridMonth"
-            initialDate="2025-08-01"
+            initialDate="2025-10-24"
             validRange={{
-              start: "2025-08-01",
-              end: "2025-09-10",
+              start: "2025-10-24",
+              end: "2025-11-20",
             }}
             weekends={true}
             events={[
-              { title: "Структурно Д1", date: "2025-08-21" },
-              { title: "Структурно Д2", date: "2025-08-22" },
-              { title: "Структурно Д3", date: "2025-08-23" },
-              { title: "Испит Структруно", date: "2025-08-25" },
-              { title: "Испит Алгоритми", date: "2025-09-01" },
-              { title: "Алгоритми Д1", date: "2025-08-29" },
-              { title: "Алгоритми Д2", date: "2025-08-30" },
-              { title: "Алгоритми Д3", date: "2025-08-31" },
-              { title: "Калкулус Д1", date: "2025-08-18" },
-              { title: "Калкулус Д2", date: "2025-08-19" },
-              { title: "Калкулус Д3", date: "2025-08-20" },
-              { title: "Калкулус Д4", date: "2025-08-22" },
-              { title: "Калкулус Д5", date: "2025-08-23" },
-              { title: "Калкулус Д6", date: "2025-08-24" },
+              { title: "Калкулус Д1", date: "2025-11-01" },
+              { title: "Калкулус Д2", date: "2025-11-02" },
+              { title: "Калкулус Д3", date: "2025-11-08" },
+
+              { title: "Веројатност Д1", date: "2025-10-24" },
+              { title: "Веројатност Д2", date: "2025-10-25" },
+              { title: "Веројатност Д3", date: "2025-11-01" },
+
+              { title: "Алгоритми Д1", date: "2025-11-07" },
+              { title: "Алгоритми Д2", date: "2025-11-08" },
+              { title: "Алгоритми Д3", date: "2025-11-09" },
+              { title: "Алгоритми Д4", date: "2025-11-15" },
+
+              { title: "Структурно Д1", date: "2025-11-07" },
+              { title: "Структурно Д2", date: "2025-11-08" },
+              { title: "Структурно Д3", date: "2025-11-09" },
+              { title: "Структурно Д4", date: "2025-11-15" },
             ]}
             eventBackgroundColor="#14b8a6"
             eventBorderColor="#14b8a6"
@@ -495,7 +513,7 @@ export default function Home() {
                   Hristijan Saveski
                 </CardTitle>
                 <CardDescription className="text-teal-200 text-base">
-                  Senior Cloud Engineer
+                  Cloud Engineer
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-2">
