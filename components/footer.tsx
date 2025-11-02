@@ -18,10 +18,10 @@ export function Footer() {
 
   const socialLinks = [
     { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Twitter, href: "#", label: "Twitter" },
+    // { icon: Twitter, href: "#", label: "Twitter" },
     { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Youtube, href: "#", label: "YouTube" },
+    // { icon: Linkedin, href: "#", label: "LinkedIn" },
+    // { icon: Youtube, href: "#", label: "YouTube" },
   ];
 
   const footerLinks = {
@@ -81,7 +81,7 @@ export function Footer() {
           </div>
 
           {/* Courses */}
-          <div>
+          {/* <div>
             <h4 className="font-semibold mb-4">{t("courses.title")}</h4>
             <ul className="space-y-2">
               {footerLinks.courses.map((link, index) => (
@@ -95,7 +95,7 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </div> */}
 
           {/* Company */}
           <div>
@@ -135,7 +135,7 @@ export function Footer() {
         {/* Bottom Section */}
         <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            © 2024 Kodrum Educational Center. All rights reserved.
+            © 2025 Kodrum Educational Center. All rights reserved.
           </p>
 
           {/* Social Links */}

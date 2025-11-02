@@ -1,6 +1,10 @@
 "use client";
 
+import { useTranslation } from "react-i18next";
+
 export function TechnologyLogos() {
+  const { t } = useTranslation();
+  
   const technologies = [
     { name: "Python", logo: "/logos/python.png" },
     { name: "Java", logo: "/logos/java.webp" },
@@ -17,10 +21,10 @@ export function TechnologyLogos() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h3 className="text-2xl font-bold text-gray-900 mb-4">
-            Technologies We Teach
+            {t("technologies.title")}
           </h3>
           <p className="text-gray-600">
-            Learn the most in-demand programming languages and tools
+            {t("technologies.subtitle")}
           </p>
         </div>
 

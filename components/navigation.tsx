@@ -21,7 +21,7 @@ export function Navigation() {
     // { key: "blog", href: "/blog" },
     // { key: "careers", href: "/careers" },
     { key: "contact", href: "/contact" },
-    { key: "faq", href: "/faq" },
+    // { key: "faq", href: "/faq" },
   ];
 
   return (
@@ -50,7 +50,7 @@ export function Navigation() {
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center space-x-4">
             <LanguageSwitcher />
-            <Link href="/courses">
+            <Link href="#pripremi">
               <Button className="bg-teal-500 hover:bg-teal-600 text-white font-semibold">
                 {t("nav.enrollNow")}
               </Button>

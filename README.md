@@ -1,3 +1,5 @@
+#Kodrum website
+
 # Project Setup and Running Instructions
 
 ## Installation
@@ -14,7 +16,6 @@
    ```
 
 ## Running the Project
-
-    ```bash
-    pnpm run dev
-    ```
+```bash
+   pnpm run dev
+   ```

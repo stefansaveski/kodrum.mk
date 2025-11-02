@@ -1,16 +1,21 @@
+"use client";
+
+import { useTranslation } from "react-i18next";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
 export default function Stories() {
+  const { t } = useTranslation();
+
   return (
     <section className="py-20 bg-gradient-to-b from-white to-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent mb-4">
-            Success Stories
+            {t("stories.title")}
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            See how our graduates are making their mark in the tech industry
+            {t("stories.subtitle")}
           </p>
         </div>
 

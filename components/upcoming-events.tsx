@@ -14,10 +14,10 @@ export function UpcomingEvents() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent mb-4">
-            Upcoming Events & Courses
+            {t("hero.upcoming")}
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Stay updated with our latest course schedules and special events
+            {t("hero.upcoming-description")}
           </p>
         </div>
         <EventsCalendar />

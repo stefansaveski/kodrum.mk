@@ -49,7 +49,7 @@ export function ContactForm() {
               {t("contact.getInTouch")}
             </h2>
             <p className="text-xl text-gray-600 mb-8">
-              Ready to start your learning journey? Get in touch with us today!
+              {t("contactForm.description")}
             </p>
 
             <div className="space-y-6">
@@ -62,7 +62,7 @@ export function ContactForm() {
                     {t("contact.address")}
                   </h4>
                   <p className="text-gray-600">
-                    123 Tech Street, Skopje, Macedonia
+                    Todor Changov 8, Skopje, Macedonia
                   </p>
                 </div>
               </div>
@@ -75,7 +75,7 @@ export function ContactForm() {
                   <h4 className="font-semibold text-gray-900">
                     {t("contact.phone")}
                   </h4>
-                  <p className="text-gray-600">+389 2 123 4567</p>
+                  <p className="text-gray-600">+389 75 295{" "}582</p>
                 </div>
               </div>
 
@@ -87,7 +87,7 @@ export function ContactForm() {
                   <h4 className="font-semibold text-gray-900">
                     {t("contact.email")}
                   </h4>
-                  <p className="text-gray-600">info@techedu.mk</p>
+                  <p className="text-gray-600">kodrum.mk@gmail.com</p>
                 </div>
               </div>
             </div>
@@ -96,9 +96,9 @@ export function ContactForm() {
           {/* Contact Form */}
           <Card>
             <CardHeader>
-              <CardTitle>Send us a Message</CardTitle>
+              <CardTitle>{t("contactForm.title")}</CardTitle>
               <CardDescription>
-                We'll get back to you within 24 hours
+                {t("contactForm.subtitle")}
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -107,7 +107,7 @@ export function ContactForm() {
                   <Input
                     type="text"
                     name="name"
-                    placeholder="Your Name"
+                    placeholder={t("contactForm.namePlaceholder")}
                     value={formData.name}
                     onChange={handleChange}
                     required
@@ -117,7 +117,7 @@ export function ContactForm() {
                   <Input
                     type="email"
                     name="email"
-                    placeholder="Your Email"
+                    placeholder={t("contactForm.emailPlaceholder")}
                     value={formData.email}
                     onChange={handleChange}
                     required
@@ -126,7 +126,7 @@ export function ContactForm() {
                 <div>
                   <Textarea
                     name="message"
-                    placeholder="Your Message"
+                    placeholder={t("contactForm.messagePlaceholder")}
                     value={formData.message}
                     onChange={handleChange}
                     rows={4}
@@ -138,7 +138,7 @@ export function ContactForm() {
                   className="w-full bg-teal-500 hover:bg-teal-600 text-white rounded-lg"
                 >
                   <Send className="mr-2 h-4 w-4" />
-                  Send Message
+                  {t("contactForm.sendButton")}
                 </Button>
               </form>
             </CardContent>

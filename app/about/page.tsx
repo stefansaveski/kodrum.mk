@@ -38,360 +38,40 @@ export default function AboutPage() {
   const { t } = useTranslation();
   const [selectedMentor, setSelectedMentor] = useState(null);
 
-  const teamMembers = [
-    // Hristijan
-    {
-      name: "Hristijan Saveski",
-      role: "Senior Cloud Engineer",
-      specialization: "Cloud Computing & DevOps",
-      experience: "5+ years",
-      education: "Computer Engineering Graduate",
-      image: "/mentors/hristijan.jpg",
-      bio: "Senior Cloud Engineer with extensive experience in cloud architecture and DevOps practices. Specializes in teaching modern infrastructure and deployment strategies.",
-      courses: [
-        {
-          name: "Cloud Computing Basics",
-          level: "Intermediate",
-          duration: "6 weeks",
-          nextStart: "Sep 12, 2024",
-          price: "3,800 MKD",
-        },
-        {
-          name: "DevOps & CI/CD",
-          level: "Advanced",
-          duration: "8 weeks",
-          nextStart: "Oct 2, 2024",
-          price: "4,500 MKD",
-        },
-        {
-          name: "AWS Certification Prep",
-          level: "Advanced",
-          duration: "10 weeks",
-          nextStart: "Oct 20, 2024",
-          price: "5,500 MKD",
-        },
-        {
-          name: "Docker & Kubernetes",
-          level: "Advanced",
-          duration: "7 weeks",
-          nextStart: "Nov 8, 2024",
-          price: "4,200 MKD",
-        },
-        {
-          name: "Infrastructure as Code",
-          level: "Advanced",
-          duration: "6 weeks",
-          nextStart: "Nov 25, 2024",
-          price: "3,900 MKD",
-        },
-        {
-          name: "Cloud Security",
-          level: "Expert",
-          duration: "8 weeks",
-          nextStart: "Dec 10, 2024",
-          price: "5,000 MKD",
-        },
-      ],
-      achievements: [
-        "AWS Certified Solutions Architect",
-        "Kubernetes expert",
-        "Cloud migration specialist",
-      ],
-      teachingStyle: "Hands-on labs with real cloud environments",
-    },
-    // Stefan
-    {
-      name: "Stefan Saveski",
-      role: "Competitive Programmer & Instructor",
-      specialization: "Programming & Algorithms",
-      experience: "6+ years",
-      education: "Computer Science Student",
-      image: "/mentors/stefan.jpg",
-      bio: "Passionate competitive programmer with multiple awards in national and international programming contests. Specializes in teaching structured programming and algorithmic thinking.",
-      courses: [
-        {
-          name: "Structured Programming",
-          level: "Beginner",
-          duration: "4 weeks",
-          nextStart: "Aug 21, 2024",
-          price: "2,500 MKD",
-        },
-        {
-          name: "Competitive Programming",
-          level: "Advanced",
-          duration: "8 weeks",
-          nextStart: "Sep 15, 2024",
-          price: "4,500 MKD",
-        },
-        {
-          name: "C++ Fundamentals",
-          level: "Intermediate",
-          duration: "6 weeks",
-          nextStart: "Oct 1, 2024",
-          price: "3,200 MKD",
-        },
-        {
-          name: "Problem Solving Techniques",
-          level: "Intermediate",
-          duration: "5 weeks",
-          nextStart: "Oct 20, 2024",
-          price: "2,800 MKD",
-        },
-        {
-          name: "Advanced C++ Programming",
-          level: "Advanced",
-          duration: "7 weeks",
-          nextStart: "Nov 5, 2024",
-          price: "4,000 MKD",
-        },
-        {
-          name: "Programming Contest Preparation",
-          level: "Advanced",
-          duration: "10 weeks",
-          nextStart: "Nov 15, 2024",
-          price: "5,500 MKD",
-        },
-      ],
-      achievements: [
-        "3x National Programming Champion",
-        "IOI Bronze Medal",
-        "ACM ICPC Regional Finalist",
-      ],
-      teachingStyle: "Hands-on problem solving with real contest problems",
-    },
-    // Petar
-    {
-      name: "Petar Hristovski",
-      role: "Full Stack Developer",
-      specialization: "Web Development",
-      experience: "5+ years",
-      education: "Software Engineering Graduate",
-      image: "/mentors/petar.jpg",
-      bio: "Full Stack Developer at EaseAccess24 with extensive experience in modern web technologies. Passionate about teaching practical web development skills.",
-      courses: [
-        {
-          name: "Web Development Fundamentals",
-          level: "Beginner",
-          duration: "8 weeks",
-          nextStart: "Sep 5, 2024",
-          price: "3,500 MKD",
-        },
-        {
-          name: "React & Node.js",
-          level: "Intermediate",
-          duration: "10 weeks",
-          nextStart: "Sep 25, 2024",
-          price: "4,800 MKD",
-        },
-        {
-          name: "Full Stack Project",
-          level: "Advanced",
-          duration: "12 weeks",
-          nextStart: "Oct 15, 2024",
-          price: "6,000 MKD",
-        },
-        {
-          name: "JavaScript Advanced Concepts",
-          level: "Intermediate",
-          duration: "6 weeks",
-          nextStart: "Nov 5, 2024",
-          price: "3,200 MKD",
-        },
-        {
-          name: "Database Design & Management",
-          level: "Intermediate",
-          duration: "5 weeks",
-          nextStart: "Nov 20, 2024",
-          price: "2,800 MKD",
-        },
-        {
-          name: "API Development & Integration",
-          level: "Advanced",
-          duration: "7 weeks",
-          nextStart: "Dec 1, 2024",
-          price: "4,200 MKD",
-        },
-        {
-          name: "Mobile App Development",
-          level: "Advanced",
-          duration: "9 weeks",
-          nextStart: "Dec 15, 2024",
-          price: "5,200 MKD",
-        },
-      ],
-      achievements: [
-        "Senior developer at EaseAccess24",
-        "Open source contributor",
-        "Tech conference speaker",
-      ],
-      teachingStyle: "Project-based learning with industry best practices",
-    },
-    // Boris
-    {
-      name: "Boris Gjorgjievski",
-      role: "Competitive Programmer & Algorithm Expert",
-      specialization: "Algorithms & Data Structures",
-      experience: "6+ years",
-      education: "Computer Science Graduate",
-      image: "/mentors/boris.jpg",
-      bio: "Expert in algorithms and data structures with extensive competitive programming background. Known for making complex algorithmic concepts accessible to students.",
-      courses: [
-        {
-          name: "Algorithms and Data Structures",
-          level: "Intermediate",
-          duration: "4 weeks",
-          nextStart: "Aug 29, 2024",
-          price: "3,500 MKD",
-        },
-        {
-          name: "Advanced Algorithms",
-          level: "Advanced",
-          duration: "6 weeks",
-          nextStart: "Sep 20, 2024",
-          price: "4,200 MKD",
-        },
-        {
-          name: "Graph Theory",
-          level: "Advanced",
-          duration: "5 weeks",
-          nextStart: "Oct 10, 2024",
-          price: "3,800 MKD",
-        },
-        {
-          name: "Dynamic Programming",
-          level: "Advanced",
-          duration: "4 weeks",
-          nextStart: "Nov 1, 2024",
-          price: "3,600 MKD",
-        },
-        {
-          name: "Algorithm Optimization",
-          level: "Expert",
-          duration: "6 weeks",
-          nextStart: "Nov 20, 2024",
-          price: "4,800 MKD",
-        },
-        {
-          name: "Competitive Programming Strategies",
-          level: "Advanced",
-          duration: "8 weeks",
-          nextStart: "Dec 5, 2024",
-          price: "5,200 MKD",
-        },
-        {
-          name: "Machine Learning Algorithms",
-          level: "Advanced",
-          duration: "7 weeks",
-          nextStart: "Dec 15, 2024",
-          price: "4,500 MKD",
-        },
-      ],
-      achievements: [
-        "Multiple ACM ICPC medals",
-        "Algorithm optimization specialist",
-        "Published research in algorithmic complexity",
-      ],
-      teachingStyle: "Visual explanations with step-by-step problem breakdowns",
-    },
-    // Borjan
-    {
-      name: "Borjan Dimeski",
-      role: "Mathematician & Programmer",
-      specialization: "Mathematics & Programming",
-      experience: "4+ years",
-      education: "MSc Mathematics",
-      image: "/mentors/borjan.jpg",
-      bio: "Experienced mathematician with a passion for teaching calculus and discrete mathematics. Combines theoretical knowledge with practical programming applications.",
-      courses: [
-        {
-          name: "Calculus/Math 1",
-          level: "Beginner",
-          duration: "6 weeks",
-          nextStart: "Aug 18, 2024",
-          price: "2,200 MKD",
-        },
-        {
-          name: "Discrete Mathematics",
-          level: "Intermediate",
-          duration: "8 weeks",
-          nextStart: "Sep 10, 2024",
-          price: "3,000 MKD",
-        },
-        {
-          name: "Mathematical Analysis",
-          level: "Advanced",
-          duration: "10 weeks",
-          nextStart: "Oct 5, 2024",
-          price: "4,000 MKD",
-        },
-        {
-          name: "Linear Algebra",
-          level: "Intermediate",
-          duration: "6 weeks",
-          nextStart: "Oct 25, 2024",
-          price: "2,800 MKD",
-        },
-        {
-          name: "Statistics & Probability",
-          level: "Intermediate",
-          duration: "7 weeks",
-          nextStart: "Nov 10, 2024",
-          price: "3,200 MKD",
-        },
-        {
-          name: "Mathematical Modeling",
-          level: "Advanced",
-          duration: "8 weeks",
-          nextStart: "Nov 25, 2024",
-          price: "3,800 MKD",
-        },
-      ],
-      achievements: [
-        "Published mathematician",
-        "University lecturer",
-        "Math Olympiad coach",
-      ],
-      teachingStyle:
-        "Connecting mathematical theory with real-world programming applications",
-    },
-  ];
+  const teamMembers = t("aboutPage.team.members", { returnObjects: true }) as any[];
 
   const values = [
     {
       icon: BookOpen,
-      title: "Excellence in Education",
-      description:
-        "We maintain the highest standards in curriculum design and instruction delivery.",
+      title: t("aboutPage.coreValues.0.title"),
+      description: t("aboutPage.coreValues.0.description"),
       color: "bg-teal-100 text-teal-700",
     },
     {
       icon: Users,
-      title: "Inclusive Learning",
-      description:
-        "Education for everyone, regardless of age, background, or previous experience.",
+      title: t("aboutPage.coreValues.1.title"),
+      description: t("aboutPage.coreValues.1.description"),
       color: "bg-cyan-100 text-cyan-700",
     },
     {
       icon: Heart,
-      title: "Passion for Teaching",
-      description:
-        "Our instructors are passionate about sharing knowledge and inspiring students.",
+      title: t("aboutPage.coreValues.2.title"),
+      description: t("aboutPage.coreValues.2.description"),
       color: "bg-teal-100 text-teal-700",
     },
     {
       icon: Award,
-      title: "Industry Relevance",
-      description:
-        "Courses designed to meet current industry demands and future technology trends.",
+      title: t("aboutPage.coreValues.3.title"),
+      description: t("aboutPage.coreValues.3.description"),
       color: "bg-teal-100 text-teal-700",
     },
   ];
 
   const achievements = [
-    { number: "2000+", label: "Students Graduated" },
-    { number: "95%", label: "Job Placement Rate" },
-    { number: "50+", label: "Industry Partners" },
-    { number: "15+", label: "Years of Excellence" },
+    { number: "2000+", label: t("aboutPage.achievements.studentsGraduated") },
+    { number: "95%", label: t("aboutPage.achievements.jobPlacement") },
+    { number: "50+", label: t("aboutPage.achievements.industryPartners") },
+    { number: "15+", label: t("aboutPage.achievements.yearsOfExcellence") },
   ];
 
   return (
@@ -402,26 +82,25 @@ export default function AboutPage() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center text-white">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white to-cyan-100 bg-clip-text text-transparent">
-              About Kodrum
+              {t("aboutPage.title")}
             </h1>
             <p className="text-xl md:text-2xl max-w-4xl mx-auto leading-relaxed opacity-95">
-              Empowering learners of all ages with cutting-edge technology
-              education since 2023
+              {t("aboutPage.subtitle")}
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <div className="bg-white/20 backdrop-blur-sm rounded-full px-6 py-3 border border-white/30">
                 <span className="text-white font-semibold">
-                  15+ Years of Excellence
+                  {t("aboutPage.yearsExcellence")}
                 </span>
               </div>
               <div className="bg-white/20 backdrop-blur-sm rounded-full px-6 py-3 border border-white/30">
                 <span className="text-white font-semibold">
-                  2000+ Graduates
+                  {t("aboutPage.graduates")}
                 </span>
               </div>
               <div className="bg-white/20 backdrop-blur-sm rounded-full px-6 py-3 border border-white/30">
                 <span className="text-white font-semibold">
-                  95% Success Rate
+                  {t("aboutPage.successRate")}
                 </span>
               </div>
             </div>
@@ -433,11 +112,10 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent mb-4">
-              Our Foundation
+              {t("aboutPage.foundation.title")}
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              The principles that guide our educational mission and drive our
-              success
+              {t("aboutPage.foundation.subtitle")}
             </p>
           </div>
 
@@ -450,14 +128,12 @@ export default function AboutPage() {
                   <Target className="h-10 w-10 text-white" />
                 </div>
                 <CardTitle className="text-3xl font-bold mb-4">
-                  Our Mission
+                  {t("aboutPage.mission.title")}
                 </CardTitle>
               </CardHeader>
               <CardContent className="relative text-white p-8 pt-0">
                 <p className="leading-relaxed text-lg opacity-95">
-                  To provide accessible, high-quality technology education that
-                  empowers individuals to thrive in the digital age, regardless
-                  of their age or background.
+                  {t("aboutPage.mission.description")}
                 </p>
               </CardContent>
             </Card>
@@ -470,14 +146,12 @@ export default function AboutPage() {
                   <Eye className="h-10 w-10 text-white" />
                 </div>
                 <CardTitle className="text-3xl font-bold mb-4">
-                  Our Vision
+                  {t("aboutPage.vision.title")}
                 </CardTitle>
               </CardHeader>
               <CardContent className="relative text-white p-8 pt-0">
                 <p className="leading-relaxed text-lg opacity-95">
-                  To be the leading educational institution in the Balkans,
-                  recognized for innovation in technology education and student
-                  success.
+                  {t("aboutPage.vision.description")}
                 </p>
               </CardContent>
             </Card>
@@ -490,13 +164,12 @@ export default function AboutPage() {
                   <Heart className="h-10 w-10 text-white" />
                 </div>
                 <CardTitle className="text-3xl font-bold mb-4">
-                  Our Values
+                  {t("aboutPage.values.title")}
                 </CardTitle>
               </CardHeader>
               <CardContent className="relative text-white p-8 pt-0">
                 <p className="leading-relaxed text-lg opacity-95">
-                  Excellence, inclusivity, innovation, and integrity guide
-                  everything we do in our educational mission.
+                  {t("aboutPage.values.description")}
                 </p>
               </CardContent>
             </Card>
@@ -541,11 +214,10 @@ export default function AboutPage() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Our Achievements
+              {t("aboutPage.achievements.title")}
             </h2>
             <p className="text-xl text-white/90 max-w-3xl mx-auto">
-              Numbers that reflect our commitment to excellence and student
-              success
+              {t("aboutPage.achievements.subtitle")}
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -570,11 +242,10 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent mb-4">
-              Meet Our Expert Team
+              {t("aboutPage.team.title")}
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our passionate educators and industry experts are dedicated to
-              your success
+              {t("aboutPage.team.subtitle")}
             </p>
           </div>
 
@@ -624,12 +295,12 @@ export default function AboutPage() {
 
                   <Dialog>
                     <DialogTrigger asChild>
-                      <Button
+                      {/* <Button
                         variant="outline"
                         className="w-full bg-gradient-to-r from-teal-500 to-cyan-500 text-white border-0 hover:from-teal-600 hover:to-cyan-600 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
                       >
-                        Courses This Mentor Teaches
-                      </Button>
+                        {t("aboutPage.team.coursesButton")}
+                      </Button> */}
                     </DialogTrigger>
                     <DialogContent className="max-w-3xl max-h-[85vh] overflow-y-auto">
                       <DialogHeader>
@@ -656,21 +327,19 @@ export default function AboutPage() {
                           <CardContent className="p-4">
                             <h4 className="font-semibold text-gray-900 mb-3 flex items-center">
                               <Phone className="h-4 w-4 mr-2 text-teal-600" />
-                              Contact Information
+                              {t("aboutPage.team.contactInfo")}
                             </h4>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                               <div>
-                                <p className="text-gray-600">Phone:</p>
+                                <p className="text-gray-600">{t("aboutPage.team.phone")}:</p>
                                 <p className="font-medium text-teal-700">
-                                  +389 70{" "}
-                                  {Math.floor(Math.random() * 900000) + 100000}
+                                  +389 75 295{" "}582
                                 </p>
                               </div>
                               <div>
-                                <p className="text-gray-600">Email:</p>
+                                <p className="text-gray-600">{t("aboutPage.team.email")}:</p>
                                 <p className="font-medium text-teal-700">
-                                  {member.name.toLowerCase().replace(" ", ".")}
-                                  @kodrum.mk
+                                  kodrum.mk@gmail.com
                                 </p>
                               </div>
                               <div>
@@ -681,9 +350,9 @@ export default function AboutPage() {
                                 </p>
                               </div>
                               <div>
-                                <p className="text-gray-600">Office Hours:</p>
+                                <p className="text-gray-600">{t("aboutPage.team.officeHours")}:</p>
                                 <p className="font-medium text-gray-900">
-                                  Mon-Fri 2:00-6:00 PM
+                                  {t("aboutPage.team.officeHoursTime")}
                                 </p>
                               </div>
                             </div>
@@ -696,7 +365,7 @@ export default function AboutPage() {
                                 }
                               >
                                 <MessageSquare className="h-4 w-4 mr-1" />
-                                Book Consultation
+                                {t("aboutPage.team.bookConsultation")}
                               </Button>
                               <Button
                                 size="sm"
@@ -707,7 +376,7 @@ export default function AboutPage() {
                                 }
                               >
                                 <Mail className="h-4 w-4 mr-1" />
-                                Send Message
+                                {t("aboutPage.team.sendMessage")}
                               </Button>
                             </div>
                           </CardContent>
@@ -715,7 +384,7 @@ export default function AboutPage() {
 
                         <div>
                           <h4 className="font-semibold text-gray-900 mb-2">
-                            About
+                            {t("aboutPage.team.about")}
                           </h4>
                           <p className="text-gray-700 leading-relaxed">
                             {member.bio}
@@ -724,7 +393,7 @@ export default function AboutPage() {
 
                         <div>
                           <h4 className="font-semibold text-gray-900 mb-2">
-                            Teaching Style
+                            {t("aboutPage.team.teachingStyle")}
                           </h4>
                           <p className="text-gray-700">
                             {member.teachingStyle}
@@ -733,10 +402,10 @@ export default function AboutPage() {
 
                         <div>
                           <h4 className="font-semibold text-gray-900 mb-3">
-                            Achievements
+                            {t("aboutPage.team.achievements")}
                           </h4>
                           <ul className="space-y-1">
-                            {member.achievements.map((achievement, idx) => (
+                            {member.achievements.map((achievement: string, idx: number) => (
                               <li
                                 key={idx}
                                 className="text-gray-700 flex items-center gap-2"
@@ -750,7 +419,7 @@ export default function AboutPage() {
 
                         <div>
                           <h4 className="font-semibold text-gray-900 mb-3">
-                            Courses Taught
+                            {t("aboutPage.team.coursesTaught")}
                           </h4>
                           <div
                             className={`space-y-3 ${
@@ -759,7 +428,7 @@ export default function AboutPage() {
                                 : ""
                             }`}
                           >
-                            {member.courses.map((course, idx) => (
+                            {member.courses.map((course: { name: string; level: string; duration: string; nextStart: string; price: string }, idx: number) => (
                               <Card
                                 key={idx}
                                 className="border border-teal-200 hover:border-teal-300 transition-colors hover:shadow-md"
@@ -810,10 +479,10 @@ export default function AboutPage() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent mb-6">
-                Our Story
+                {t("aboutPage.story.title")}
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                How we became Macedonia's leading tech education center
+                {t("aboutPage.story.subtitle")}
               </p>
             </div>
 
@@ -824,62 +493,54 @@ export default function AboutPage() {
                     <div className="flex items-center mb-4">
                       <div className="bg-gradient-to-r from-teal-500 to-cyan-500 w-12 h-12 rounded-full flex items-center justify-center mr-4">
                         <span className="text-white font-bold text-lg">
-                          2009
+                          {t("aboutPage.story.beginning.year")}
                         </span>
                       </div>
                       <h3 className="text-2xl font-bold text-gray-900">
-                        The Beginning
+                        {t("aboutPage.story.beginning.title")}
                       </h3>
                     </div>
                     <p className="text-gray-700 leading-relaxed">
-                      Founded as a small programming school with weekend classes
-                      for university students, driven by a vision to make
-                      technology education accessible to everyone in Macedonia.
+                      {t("aboutPage.story.beginning.description")}
                     </p>
                   </CardContent>
                 </Card>
-
+{/* 
                 <Card className="border-0 shadow-xl bg-gradient-to-br from-white to-cyan-50/50 backdrop-blur-sm">
                   <CardContent className="p-8">
                     <div className="flex items-center mb-4">
                       <div className="bg-gradient-to-r from-cyan-500 to-teal-500 w-12 h-12 rounded-full flex items-center justify-center mr-4">
                         <span className="text-white font-bold text-lg">
-                          2015
+                          {t("aboutPage.story.expansion.year")}
                         </span>
                       </div>
                       <h3 className="text-2xl font-bold text-gray-900">
-                        Expansion
+                        {t("aboutPage.story.expansion.title")}
                       </h3>
                     </div>
                     <p className="text-gray-700 leading-relaxed">
-                      Expanded curriculum to include mathematics, cybersecurity,
-                      and AI. Introduced specialized programs for children as
-                      young as 7 years old, making us a comprehensive
-                      educational institution.
+                      {t("aboutPage.story.expansion.description")}
                     </p>
                   </CardContent>
-                </Card>
+                </Card> */}
 
-                <Card className="border-0 shadow-xl bg-gradient-to-br from-white to-teal-50/50 backdrop-blur-sm">
+                {/* <Card className="border-0 shadow-xl bg-gradient-to-br from-white to-teal-50/50 backdrop-blur-sm">
                   <CardContent className="p-8">
                     <div className="flex items-center mb-4">
                       <div className="bg-gradient-to-r from-teal-600 to-cyan-600 w-12 h-12 rounded-full flex items-center justify-center mr-4">
                         <span className="text-white font-bold text-lg">
-                          2024
+                          {t("aboutPage.story.today.year")}
                         </span>
                       </div>
                       <h3 className="text-2xl font-bold text-gray-900">
-                        Today
+                        {t("aboutPage.story.today.title")}
                       </h3>
                     </div>
                     <p className="text-gray-700 leading-relaxed">
-                      Recognized as one of the leading technology education
-                      institutions in the Balkans, serving 2,000+ students
-                      annually with graduates working at top companies
-                      worldwide.
+                      {t("aboutPage.story.today.description")}
                     </p>
                   </CardContent>
-                </Card>
+                </Card> */}
               </div>
 
               <div className="relative">
@@ -887,7 +548,7 @@ export default function AboutPage() {
                 <Card className="relative border-0 shadow-2xl bg-gradient-to-br from-white to-gray-50 backdrop-blur-sm">
                   <CardContent className="p-8">
                     <h3 className="text-3xl font-bold bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent mb-6">
-                      Our Success Pillars
+                      {t("aboutPage.story.successPillars.title")}
                     </h3>
                     <div className="space-y-6">
                       <div className="flex items-start gap-4">
@@ -898,10 +559,10 @@ export default function AboutPage() {
                         </div>
                         <div>
                           <h4 className="font-semibold text-gray-900 mb-2">
-                            Exceptional Instructors
+                            {t("aboutPage.story.successPillars.pillar1.title")}
                           </h4>
                           <p className="text-gray-600 text-sm">
-                            Real industry experience and passion for teaching
+                            {t("aboutPage.story.successPillars.pillar1.description")}
                           </p>
                         </div>
                       </div>
@@ -913,10 +574,10 @@ export default function AboutPage() {
                         </div>
                         <div>
                           <h4 className="font-semibold text-gray-900 mb-2">
-                            Cutting-edge Curriculum
+                            {t("aboutPage.story.successPillars.pillar2.title")}
                           </h4>
                           <p className="text-gray-600 text-sm">
-                            Evolves with technology trends and industry needs
+                            {t("aboutPage.story.successPillars.pillar2.description")}
                           </p>
                         </div>
                       </div>
@@ -928,10 +589,10 @@ export default function AboutPage() {
                         </div>
                         <div>
                           <h4 className="font-semibold text-gray-900 mb-2">
-                            Supportive Environment
+                            {t("aboutPage.story.successPillars.pillar3.title")}
                           </h4>
                           <p className="text-gray-600 text-sm">
-                            Encourages growth, innovation, and collaboration
+                            {t("aboutPage.story.successPillars.pillar3.description")}
                           </p>
                         </div>
                       </div>
