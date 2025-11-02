@@ -145,6 +145,7 @@ export function Testimonials() {
               {Array.from({ length: totalSlides }).map(
                 (_, index) => (
                   <button
+                  aria-label="button"
                     key={index}
                     onClick={() => setCurrentSlide(index)}
                     className={`w-3 h-3 rounded-full transition-colors ${

@@ -37,13 +37,6 @@ interface CalendarEvent {
 
 export default function EventsCalendar() {
   const { t } = useTranslation();
-<<<<<<< HEAD
-
-=======
-  const monthNames = t("calendar.months", { returnObjects: true }) as string[];
-  const dayNames = t("calendar.days", { returnObjects: true }) as string[];
-  
->>>>>>> 8c9beabbc678cdbd4e468685a56c8284d155b3b0
   const [selectedEvent, setSelectedEvent] = useState<CalendarEvent | null>(
     null
   );
@@ -68,7 +61,6 @@ export default function EventsCalendar() {
 
   const daysInMonth = getDaysInMonth(currentDate);
   const firstDay = getFirstDayOfMonth(currentDate);
-<<<<<<< HEAD
   const monthNames = [
     t("upcoming.months.january"),
     t("upcoming.months.february"),
@@ -203,8 +195,6 @@ export default function EventsCalendar() {
       description: "",
     },
   ];
-=======
->>>>>>> 8c9beabbc678cdbd4e468685a56c8284d155b3b0
 
   const nextMonth = () => {
     setCurrentDate(
@@ -271,11 +261,7 @@ export default function EventsCalendar() {
             className="h-5 w-5 sm:h-6 sm:w-6 text-green-600"
             aria-hidden="true"
           />
-<<<<<<< HEAD
           {t("upcoming.calendar")}
-=======
-          {t("calendar.title")}
->>>>>>> 8c9beabbc678cdbd4e468685a56c8284d155b3b0
         </h2>
         <div className="flex items-center gap-2 sm:gap-4">
           <Button
@@ -291,11 +277,7 @@ export default function EventsCalendar() {
             }`}
           >
             <ChevronLeft className="h-4 w-4" aria-hidden="true" />
-<<<<<<< HEAD
             <span className="sr-only">{t("upcoming.prev_month")}</span>
-=======
-            <span className="sr-only">{t("calendar.prevMonth")}</span>
->>>>>>> 8c9beabbc678cdbd4e468685a56c8284d155b3b0
           </Button>
           <span
             className="text-base sm:text-lg font-semibold min-w-[120px] sm:min-w-[150px] text-center"
@@ -316,11 +298,7 @@ export default function EventsCalendar() {
             }`}
           >
             <ChevronRight className="h-4 w-4" aria-hidden="true" />
-<<<<<<< HEAD
             <span className="sr-only">{t("upcoming.next_month")}</span>
-=======
-            <span className="sr-only">{t("calendar.nextMonth")}</span>
->>>>>>> 8c9beabbc678cdbd4e468685a56c8284d155b3b0
           </Button>
         </div>
       </div>
@@ -427,7 +405,6 @@ export default function EventsCalendar() {
             </DialogTitle>
           </DialogHeader>
 
-<<<<<<< HEAD
           {selectedEvent &&
             (() => {
               const dayEvents = getEventsForDate(
@@ -564,79 +541,6 @@ export default function EventsCalendar() {
                 </>
               );
             })()}
-=======
-          {selectedEvent && (
-            <div className="space-y-4" id="event-description">
-              <div className="flex flex-wrap items-center gap-2">
-                <Badge
-                  variant={
-                    selectedEvent.type === "exam" ? "destructive" : "default"
-                  }
-                >
-                  {selectedEvent.type === "exam" ? t("calendar.examDay") : t("calendar.regularClass")}
-                </Badge>
-                <Badge variant="outline">{selectedEvent.level}</Badge>
-              </div>
-
-              <div className="space-y-3 text-sm">
-                <div className="flex items-center gap-2">
-                  <BookOpen
-                    className="h-4 w-4 text-gray-500 flex-shrink-0"
-                    aria-hidden="true"
-                  />
-                  <span className="font-medium">{t("calendar.course")}:</span>
-                  <span>{selectedEvent.course}</span>
-                </div>
-
-                {selectedEvent.day > 0 && (
-                  <div className="flex items-center gap-2">
-                    <Award
-                      className="h-4 w-4 text-gray-500 flex-shrink-0"
-                      aria-hidden="true"
-                    />
-                    <span className="font-medium">{t("calendar.day")}:</span>
-                    <span>{t("calendar.day")} {selectedEvent.day}</span>
-                  </div>
-                )}
-
-                <div className="flex items-center gap-2">
-                  <User
-                    className="h-4 w-4 text-gray-500 flex-shrink-0"
-                    aria-hidden="true"
-                  />
-                  <span className="font-medium">{t("calendar.mentor")}:</span>
-                  <span>{selectedEvent.mentor}</span>
-                </div>
-
-                <div className="flex items-center gap-2">
-                  <Calendar
-                    className="h-4 w-4 text-gray-500 flex-shrink-0"
-                    aria-hidden="true"
-                  />
-                  <span className="font-medium">{t("calendar.date")}:</span>
-                  <span>
-                    {new Date(selectedEvent.date).toLocaleDateString()}
-                  </span>
-                </div>
-
-                <div className="flex items-center gap-2">
-                  <Clock
-                    className="h-4 w-4 text-gray-500 flex-shrink-0"
-                    aria-hidden="true"
-                  />
-                  <span className="font-medium">{t("calendar.time")}:</span>
-                  <span>{selectedEvent.time}</span>
-                </div>
-
-                <div className="pt-2 border-t">
-                  <p className="text-sm text-gray-600">
-                    {selectedEvent.description}
-                  </p>
-                </div>
-              </div>
-            </div>
-          )}
->>>>>>> 8c9beabbc678cdbd4e468685a56c8284d155b3b0
         </DialogContent>
       </Dialog>
     </section>
