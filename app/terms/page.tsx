@@ -1,16 +1,26 @@
+"use client"
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useTranslation } from "react-i18next";
 
 export default function TermsPage() {
+  const { t } = useTranslation();
+  const enrollmentItems = t("terms.enrollment.items", { returnObjects: true }) as string[];
+  const attendanceItems = t("terms.attendance.items", { returnObjects: true }) as string[];
+  const refundItems = t("terms.refund.items", { returnObjects: true }) as string[];
+  const intellectualItems = t("terms.intellectual.items", { returnObjects: true }) as string[];
+  const liabilityItems = t("terms.liability.items", { returnObjects: true }) as string[];
+
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
       <section className="bg-gradient-to-br from-teal-50 to-cyan-50 py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Terms of Service
+            {t("terms.title")}
           </h1>
           <p className="text-xl text-gray-600">
-            Terms and conditions for using our services
+            {t("terms.subtitle")}
           </p>
         </div>
       </section>
@@ -21,26 +31,14 @@ export default function TermsPage() {
           <Card className="border-teal-100">
             <CardHeader>
               <CardTitle className="text-xl text-teal-700">
-                Course Enrollment and Payment
+                {t("terms.enrollment.title")}
               </CardTitle>
             </CardHeader>
             <CardContent className="prose prose-gray max-w-none">
               <ul className="list-disc pl-6 space-y-1">
-                <li>
-                  Course fees must be paid in full before the start date unless
-                  installment arrangements are made
-                </li>
-                <li>
-                  Prices are listed in Macedonian Denars (MKD) and are subject
-                  to change
-                </li>
-                <li>
-                  Registration is confirmed only after payment is received
-                </li>
-                <li>
-                  Course materials and access are provided upon successful
-                  enrollment
-                </li>
+                {enrollmentItems.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
               </ul>
             </CardContent>
           </Card>
@@ -48,21 +46,14 @@ export default function TermsPage() {
           <Card className="border-teal-100">
             <CardHeader>
               <CardTitle className="text-xl text-teal-700">
-                Attendance and Participation
+                {t("terms.attendance.title")}
               </CardTitle>
             </CardHeader>
             <CardContent className="prose prose-gray max-w-none">
               <ul className="list-disc pl-6 space-y-1">
-                <li>
-                  Regular attendance is expected for optimal learning outcomes
-                </li>
-                <li>
-                  Students must notify instructors in advance of any absences
-                </li>
-                <li>Makeup sessions may be available for missed classes</li>
-                <li>
-                  Disruptive behavior may result in removal from the course
-                </li>
+                {attendanceItems.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
               </ul>
             </CardContent>
           </Card>
@@ -70,20 +61,14 @@ export default function TermsPage() {
           <Card className="border-teal-100">
             <CardHeader>
               <CardTitle className="text-xl text-teal-700">
-                Refund Policy
+                {t("terms.refund.title")}
               </CardTitle>
             </CardHeader>
             <CardContent className="prose prose-gray max-w-none">
               <ul className="list-disc pl-6 space-y-1">
-                <li>
-                  Full refund available within 7 days of course start if not
-                  satisfied
-                </li>
-                <li>
-                  50% refund available within the first 25% of course duration
-                </li>
-                <li>No refunds after 25% of course completion</li>
-                <li>Refunds processed within 14 business days</li>
+                {refundItems.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
               </ul>
             </CardContent>
           </Card>
@@ -91,15 +76,14 @@ export default function TermsPage() {
           <Card className="border-teal-100">
             <CardHeader>
               <CardTitle className="text-xl text-teal-700">
-                Intellectual Property
+                {t("terms.intellectual.title")}
               </CardTitle>
             </CardHeader>
             <CardContent className="prose prose-gray max-w-none">
               <ul className="list-disc pl-6 space-y-1">
-                <li>All course materials are proprietary to Kodrum</li>
-                <li>Students may not redistribute or share course content</li>
-                <li>Recording of classes requires explicit permission</li>
-                <li>Student work remains the property of the student</li>
+                {intellectualItems.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
               </ul>
             </CardContent>
           </Card>
@@ -107,25 +91,14 @@ export default function TermsPage() {
           <Card className="border-teal-100">
             <CardHeader>
               <CardTitle className="text-xl text-teal-700">
-                Limitation of Liability
+                {t("terms.liability.title")}
               </CardTitle>
             </CardHeader>
             <CardContent className="prose prose-gray max-w-none">
               <ul className="list-disc pl-6 space-y-1">
-                <li>
-                  Kodrum is not liable for indirect or consequential damages
-                </li>
-                <li>
-                  Our liability is limited to the amount paid for the course
-                </li>
-                <li>
-                  We do not guarantee specific learning outcomes or job
-                  placement
-                </li>
-                <li>
-                  Students are responsible for their own equipment and internet
-                  connection
-                </li>
+                {liabilityItems.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
               </ul>
             </CardContent>
           </Card>
@@ -133,35 +106,31 @@ export default function TermsPage() {
           <Card className="border-teal-100">
             <CardHeader>
               <CardTitle className="text-xl text-teal-700">
-                Modifications
+                {t("terms.modifications.title")}
               </CardTitle>
             </CardHeader>
             <CardContent className="prose prose-gray max-w-none">
-              <p>
-                We reserve the right to modify these terms at any time. Changes
-                will be communicated to enrolled students via email. Continued
-                use of our services constitutes acceptance of modified terms.
-              </p>
+              <p>{t("terms.modifications.content")}</p>
             </CardContent>
           </Card>
 
           <Card className="border-teal-100">
             <CardHeader>
               <CardTitle className="text-xl text-teal-700">
-                Contact Information
+                {t("terms.contactInfo.title")}
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p>For questions about these terms, please contact us:</p>
+              <p>{t("terms.contactInfo.intro")}</p>
               <div className="mt-4 space-y-2">
                 <p>
-                  <strong>Email:</strong> legal@kodrum.mk
+                  <strong>{t("terms.contactInfo.email")}:</strong> kodrum.mk@gmail.com
                 </p>
                 <p>
-                  <strong>Phone:</strong> +389 70 123 456
+                  <strong>{t("terms.contactInfo.phone")}:</strong> +389 75 295{" "}582
                 </p>
                 <p>
-                  <strong>Address:</strong> Skopje, North Macedonia
+                  <strong>{t("terms.contactInfo.address")}:</strong> {t("terms.contactInfo.addressValue")}
                 </p>
               </div>
             </CardContent>

@@ -486,7 +486,7 @@ export default function CareersPage() {
             </Button>
           </div>
           <div className="mt-6 text-sm text-gray-500">
-            <p>Questions? Email us at careers@techedu.mk</p>
+            <p>Questions? Email us at kodrum.mk@gmail.com</p>
           </div>
         </div>
       </section>

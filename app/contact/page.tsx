@@ -60,16 +60,16 @@ export default function ContactPage() {
     {
       icon: Phone,
       title: t("contact.phone"),
-      primary: "+389 2 123 4567",
-      secondary: "+389 70 123 456",
+      primary: "+389 75 295 582",
+      secondary: "+389 75 295 582",
       description: "Call us during business hours",
       color: "bg-teal-100 text-teal-700",
     },
     {
       icon: Mail,
       title: t("contact.email"),
-      primary: "info@techedu.mk",
-      secondary: "admissions@techedu.mk",
+      primary: "kodrum.mk@gmail.com",
+      secondary: "kodrum.mk@gmail.com",
       description: "We respond within 24 hours",
       color: "bg-teal-100 text-teal-700",
     },
@@ -100,26 +100,26 @@ export default function ContactPage() {
   const departments = [
     {
       name: "Admissions",
-      email: "admissions@techedu.mk",
-      phone: "+389 2 123 4567",
+      email: "kodrum.mk@gmail.com",
+      phone: "+389 75 295 582",
       description: "Course enrollment and program information",
     },
     {
       name: "Student Support",
-      email: "support@techedu.mk",
-      phone: "+389 2 123 4568",
+      email: "kodrum.mk@gmail.com",
+      phone: "+389 75 295 582",
       description: "Academic support and student services",
     },
     {
       name: "Corporate Training",
-      email: "corporate@techedu.mk",
-      phone: "+389 2 123 4569",
+      email: "kodrum.mk@gmail.com",
+      phone: "+389 75 295 582",
       description: "Custom training solutions for businesses",
     },
     {
       name: "Technical Support",
-      email: "tech@techedu.mk",
-      phone: "+389 2 123 4570",
+      email: "kodrum.mk@gmail.com",
+      phone: "+389 75 295 582",
       description: "Platform and technical assistance",
     },
   ];
@@ -183,9 +183,15 @@ export default function ContactPage() {
                   </CardHeader>
                   <CardContent>
                     <p className="font-semibold text-gray-900 mb-1">
-                      {method.primary}
+                      {method.title === t("contact.phone") 
+                        ? method.primary.slice(0, -3) + " " + method.primary.slice(-3)
+                        : method.primary}
                     </p>
-                    <p className="text-sm text-gray-600">{method.secondary}</p>
+                    <p className="text-sm text-gray-600">
+                      {method.title === t("contact.phone") && method.secondary
+                        ? method.secondary.slice(0, -3) + " " + method.secondary.slice(-3)
+                        : method.secondary}
+                    </p>
                   </CardContent>
                 </Card>
               );
@@ -371,7 +377,9 @@ export default function ContactPage() {
                           <span className="text-teal-700 font-medium">
                             {dept.email}
                           </span>
-                          <span className="text-gray-600">{dept.phone}</span>
+                          <span className="text-gray-600">
+                            {dept.phone.slice(0, -3)}{" "}{dept.phone.slice(-3)}
+                          </span>
                         </div>
                       </div>
                     ))}

@@ -20,6 +20,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
+import { useTranslation } from "react-i18next";
 
 interface CalendarEvent {
   id: string;
@@ -203,6 +204,10 @@ const events: CalendarEvent[] = [
 ];
 
 export default function EventsCalendar() {
+  const { t } = useTranslation();
+  const monthNames = t("calendar.months", { returnObjects: true }) as string[];
+  const dayNames = t("calendar.days", { returnObjects: true }) as string[];
+  
   const [selectedEvent, setSelectedEvent] = useState<CalendarEvent | null>(
     null
   );
@@ -227,21 +232,6 @@ export default function EventsCalendar() {
 
   const daysInMonth = getDaysInMonth(currentDate);
   const firstDay = getFirstDayOfMonth(currentDate);
-  const monthNames = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
-  const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
   const nextMonth = () => {
     setCurrentDate(
@@ -308,7 +298,7 @@ export default function EventsCalendar() {
             className="h-5 w-5 sm:h-6 sm:w-6 text-green-600"
             aria-hidden="true"
           />
-          Calendar for Events and Courses
+          {t("calendar.title")}
         </h2>
         <div className="flex items-center gap-2 sm:gap-4">
           <Button
@@ -324,7 +314,7 @@ export default function EventsCalendar() {
             }`}
           >
             <ChevronLeft className="h-4 w-4" aria-hidden="true" />
-            <span className="sr-only">Previous month</span>
+            <span className="sr-only">{t("calendar.prevMonth")}</span>
           </Button>
           <span
             className="text-base sm:text-lg font-semibold min-w-[120px] sm:min-w-[150px] text-center"
@@ -345,7 +335,7 @@ export default function EventsCalendar() {
             }`}
           >
             <ChevronRight className="h-4 w-4" aria-hidden="true" />
-            <span className="sr-only">Next month</span>
+            <span className="sr-only">{t("calendar.nextMonth")}</span>
           </Button>
         </div>
       </div>
@@ -460,7 +450,7 @@ export default function EventsCalendar() {
                     selectedEvent.type === "exam" ? "destructive" : "default"
                   }
                 >
-                  {selectedEvent.type === "exam" ? "EXAM DAY" : "Regular Class"}
+                  {selectedEvent.type === "exam" ? t("calendar.examDay") : t("calendar.regularClass")}
                 </Badge>
                 <Badge variant="outline">{selectedEvent.level}</Badge>
               </div>
@@ -471,7 +461,7 @@ export default function EventsCalendar() {
                     className="h-4 w-4 text-gray-500 flex-shrink-0"
                     aria-hidden="true"
                   />
-                  <span className="font-medium">Course:</span>
+                  <span className="font-medium">{t("calendar.course")}:</span>
                   <span>{selectedEvent.course}</span>
                 </div>
 
@@ -481,8 +471,8 @@ export default function EventsCalendar() {
                       className="h-4 w-4 text-gray-500 flex-shrink-0"
                       aria-hidden="true"
                     />
-                    <span className="font-medium">Day:</span>
-                    <span>Day {selectedEvent.day}</span>
+                    <span className="font-medium">{t("calendar.day")}:</span>
+                    <span>{t("calendar.day")} {selectedEvent.day}</span>
                   </div>
                 )}
 
@@ -491,7 +481,7 @@ export default function EventsCalendar() {
                     className="h-4 w-4 text-gray-500 flex-shrink-0"
                     aria-hidden="true"
                   />
-                  <span className="font-medium">Mentor:</span>
+                  <span className="font-medium">{t("calendar.mentor")}:</span>
                   <span>{selectedEvent.mentor}</span>
                 </div>
 
@@ -500,7 +490,7 @@ export default function EventsCalendar() {
                     className="h-4 w-4 text-gray-500 flex-shrink-0"
                     aria-hidden="true"
                   />
-                  <span className="font-medium">Date:</span>
+                  <span className="font-medium">{t("calendar.date")}:</span>
                   <span>
                     {new Date(selectedEvent.date).toLocaleDateString()}
                   </span>
@@ -511,7 +501,7 @@ export default function EventsCalendar() {
                     className="h-4 w-4 text-gray-500 flex-shrink-0"
                     aria-hidden="true"
                   />
-                  <span className="font-medium">Time:</span>
+                  <span className="font-medium">{t("calendar.time")}:</span>
                   <span>{selectedEvent.time}</span>
                 </div>
 

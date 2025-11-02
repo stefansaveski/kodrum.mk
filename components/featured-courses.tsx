@@ -21,48 +21,45 @@ export function FeaturedCourses() {
       id: "algorithms-data-structures",
       icon: Database,
       title: t("courses.programming.algorithms"),
-      description:
-        "Master essential algorithms and data structures for competitive programming and interviews",
+  description: t("courses.active-courses-items.items.algorithms.description"),
       instructor: "Boris Gj. and Stefan S.",
       startDate: "August 29, 2024",
       duration: "4 days",
-      level: "Intermediate",
-      price: "2000 MKD",
+      level: t("levels.intermediate"),
+      price: "2500 MKD",
       color: "bg-cyan-100 text-cyan-700",
-      status: "Enrolling Now",
+      status: t("courses.status.enrolling"),
     },
     {
       id: "object-oriented",
       icon: Code,
-      title: t("courses.programming.objectOriented"),
-      description:
-        "Learn object-oriented programming fundamentals with C++ and build a solid foundation for software development",
+      title: t("courses.programming.structuredProgramming"),
+  description: t("courses.active-courses-items.items.structuredProgramming.description"),
       instructor: "Stefan Saveski",
       startDate: "August 31, 2024",
       duration: "4 days",
-      level: "Beginner",
+      level: t("levels.beginner"),
       price: "2,500 MKD",
       color: "bg-teal-600 text-white",
-      status: "Enrolling Now",
+      status: t("courses.status.enrolling"),
     },
     {
       id: "calculus",
       icon: Calculator,
-      title: t("courses.math.math2"),
-      description:
-        "Master fundamental discrete math concepts with practical applications and problem-solving techniques",
+      title: t("courses.math.calculus1"),
+  description: t("courses.active-courses-items.items.calculus.description"),
       instructor: "Borjan Dimeski",
       startDate: "September 7, 2024",
-      duration: "6 days",
-      level: "Beginner",
-      price: "4000 MKD",
+      duration: "3 days",
+      level: t("levels.beginner"),
+      price: "2500 MKD",
       color: "bg-teal-100 text-teal-700",
-      status: "Enrolling Now",
+      status: t("courses.status.enrolling"),
     },
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-white" id="pripremi">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -79,7 +76,7 @@ export function FeaturedCourses() {
             return (
               <Card
                 key={course.id}
-                className="hover:shadow-xl transition-all duration-300 border-2 hover:border-teal-200 hover:-translate-y-1"
+                className="hover:shadow-xl transition-all duration-300 border-2 hover:border-teal-200 hover:-translate-y-1 flex flex-col justify-between"
               >
                 <CardHeader>
                   <div
@@ -108,44 +105,44 @@ export function FeaturedCourses() {
                 <CardContent className="space-y-4">
                   <div className="space-y-3">
                     <div className="flex justify-between text-sm">
-                      <span className="text-gray-500">Instructor:</span>
+                      <span className="text-gray-500">{t("common.instructor")}</span>
                       <span className="font-semibold text-gray-700">
                         {course.instructor}
                       </span>
                     </div>
                     <div className="flex justify-between text-sm">
-                      <span className="text-gray-500">Starts:</span>
+                      <span className="text-gray-500">{t("common.starts")}</span>
                       <span className="font-semibold text-gray-700">
                         {course.startDate}
                       </span>
                     </div>
                     <div className="flex justify-between text-sm">
-                      <span className="text-gray-500">Duration:</span>
+                      <span className="text-gray-500">{t("common.duration")}</span>
                       <span className="font-semibold text-gray-700">
                         {course.duration}
                       </span>
                     </div>
                     <div className="flex justify-between text-sm">
-                      <span className="text-gray-500">Level:</span>
+                      <span className="text-gray-500">{t("common.level")}</span>
                       <Badge variant="outline" className="text-xs">
                         {course.level}
                       </Badge>
                     </div>
                   </div>
 
-                  <div className="flex gap-2 pt-4">
+                  <div className="flex gap-2 pt-4 ">
                     <Button
                       className="flex-1 bg-teal-600 hover:bg-teal-700 text-white font-semibold"
                       asChild
                     >
-                      <Link href="/contact">Enroll Now</Link>
+                      <Link href="/contact">{t("courses.enlist")}</Link>
                     </Button>
                     <Button
                       variant="outline"
                       className="flex-1 border-teal-600 text-teal-600 hover:bg-teal-50 bg-transparent"
                       asChild
                     >
-                      <Link href={`/courses/${course.id}`}>Learn More</Link>
+                      {/* <Link href={`/courses/${course.id}`}>Learn More</Link> */}
                     </Button>
                   </div>
                 </CardContent>
@@ -161,7 +158,7 @@ export function FeaturedCourses() {
             className="border-teal-600 text-teal-600 hover:bg-teal-50 px-8 bg-transparent"
             asChild
           >
-            <Link href="/courses">View All Courses</Link>
+            {/* <Link href="/courses">View All Courses</Link> */}
           </Button>
         </div>
       </div>
