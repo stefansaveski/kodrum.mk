@@ -20,6 +20,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
+import { useTranslation } from "react-i18next";
 
 interface CalendarEvent {
   id: string;
@@ -29,184 +30,18 @@ interface CalendarEvent {
   day: number;
   mentor: string;
   time: string;
-  duration: string;
   type: "regular" | "exam";
   level: string;
   description: string;
 }
 
-const events: CalendarEvent[] = [
-  {
-    id: "1",
-    date: "2024-08-18",
-    title: "Calculus Day 1",
-    course: "Calculus",
-    day: 1,
-    mentor: "Borjan Dimeski",
-    time: "17:00 - 20:00",
-    duration: "3 hours",
-    type: "regular",
-    level: "University",
-    description:
-      "Introduction to limits and continuity. Foundation concepts for calculus.",
-  },
-  {
-    id: "2",
-    date: "2024-08-19",
-    title: "Calculus Day 2",
-    course: "Calculus",
-    day: 2,
-    mentor: "Borjan Dimeski",
-    time: "17:00 - 20:00",
-    duration: "3 hours",
-    type: "regular",
-    level: "University",
-    description:
-      "Derivatives and differentiation rules. Practical applications.",
-  },
-  {
-    id: "3",
-    date: "2024-08-20",
-    title: "Calculus Day 3",
-    course: "Calculus",
-    day: 3,
-    mentor: "Borjan Dimeski",
-    time: "17:00 - 20:00",
-    duration: "3 hours",
-    type: "regular",
-    level: "University",
-    description: "Integration techniques and fundamental theorem of calculus.",
-  },
-  {
-    id: "4",
-    date: "2024-08-21",
-    title: "Structured Programming Day 1",
-    course: "Structured Programming",
-    day: 1,
-    mentor: "Stefan Saveski",
-    time: "17:00 - 20:00",
-    duration: "3 hours",
-    type: "regular",
-    level: "Beginner",
-    description:
-      "Introduction to programming concepts, variables, and basic syntax.",
-  },
-  {
-    id: "5",
-    date: "2024-08-22",
-    title: "Calculus Day 4 & Structured Programming Day 2",
-    course: "Calculus & Structured Programming",
-    day: 4,
-    mentor: "Borjan Dimeski & Stefan Saveski",
-    time: "17:00 - 20:00",
-    duration: "3 hours",
-    type: "regular",
-    level: "Mixed",
-    description:
-      "Advanced calculus concepts and control structures in programming.",
-  },
-  {
-    id: "6",
-    date: "2024-08-23",
-    title: "Calculus Day 5 & Structured Programming Day 3",
-    course: "Calculus & Structured Programming",
-    day: 5,
-    mentor: "Borjan Dimeski & Stefan Saveski",
-    time: "17:00 - 20:00",
-    duration: "3 hours",
-    type: "regular",
-    level: "Mixed",
-    description: "Applications of calculus and functions in programming.",
-  },
-  {
-    id: "7",
-    date: "2024-08-24",
-    title: "Calculus Day 6",
-    course: "Calculus",
-    day: 6,
-    mentor: "Borjan Dimeski",
-    time: "17:00 - 20:00",
-    duration: "3 hours",
-    type: "regular",
-    level: "University",
-    description: "Series and sequences. Preparation for final exam.",
-  },
-  {
-    id: "8",
-    date: "2024-08-25",
-    title: "Structured Programming EXAM DAY",
-    course: "Structured Programming",
-    day: 0,
-    mentor: "Stefan Saveski",
-    time: "17:00 - 20:00",
-    duration: "3 hours",
-    type: "exam",
-    level: "Beginner",
-    description:
-      "Final examination for Structured Programming course. Practical coding test.",
-  },
-  {
-    id: "9",
-    date: "2024-08-29",
-    title: "Algorithms and Data Structures Day 1",
-    course: "Algorithms and Data Structures",
-    day: 1,
-    mentor: "Boris Gj.",
-    time: "17:00 - 20:00",
-    duration: "3 hours",
-    type: "regular",
-    level: "Intermediate",
-    description:
-      "Introduction to algorithms, complexity analysis, and basic data structures.",
-  },
-  {
-    id: "10",
-    date: "2024-08-30",
-    title: "Algorithms and Data Structures Day 2",
-    course: "Algorithms and Data Structures",
-    day: 2,
-    mentor: "Boris Gj.",
-    time: "17:00 - 20:00",
-    duration: "3 hours",
-    type: "regular",
-    level: "Intermediate",
-    description:
-      "Sorting algorithms, searching techniques, and array operations.",
-  },
-  {
-    id: "11",
-    date: "2024-08-31",
-    title: "Algorithms and Data Structures Day 3",
-    course: "Algorithms and Data Structures",
-    day: 3,
-    mentor: "Boris Gj.",
-    time: "17:00 - 20:00",
-    duration: "3 hours",
-    type: "regular",
-    level: "Intermediate",
-    description: "Trees, graphs, and advanced data structure implementations.",
-  },
-  {
-    id: "12",
-    date: "2024-09-01",
-    title: "Algorithms and Data Structures EXAM DAY",
-    course: "Algorithms and Data Structures",
-    day: 0,
-    mentor: "Boris Gj.",
-    time: "17:00 - 20:00",
-    duration: "3 hours",
-    type: "exam",
-    level: "Intermediate",
-    description:
-      "Final examination for Algorithms and Data Structures. Problem-solving test.",
-  },
-];
-
 export default function EventsCalendar() {
+  const { t } = useTranslation();
+
   const [selectedEvent, setSelectedEvent] = useState<CalendarEvent | null>(
     null
   );
-  const [currentDate, setCurrentDate] = useState(new Date(2024, 7)); // August 2024
+  const [currentDate, setCurrentDate] = useState(new Date());
   const [focusedDay, setFocusedDay] = useState<number | null>(null);
   const calendarRef = useRef<HTMLDivElement>(null);
 
@@ -228,20 +63,139 @@ export default function EventsCalendar() {
   const daysInMonth = getDaysInMonth(currentDate);
   const firstDay = getFirstDayOfMonth(currentDate);
   const monthNames = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
+    t("upcoming.months.january"),
+    t("upcoming.months.february"),
+    t("upcoming.months.march"),
+    t("upcoming.months.april"),
+    t("upcoming.months.may"),
+    t("upcoming.months.june"),
+    t("upcoming.months.july"),
+    t("upcoming.months.august"),
+    t("upcoming.months.september"),
+    t("upcoming.months.october"),
+    t("upcoming.months.november"),
+    t("upcoming.months.december"),
   ];
-  const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  const dayNames = [
+    t("upcoming.days.sunday"),
+    t("upcoming.days.monday"),
+    t("upcoming.days.tuesday"),
+    t("upcoming.days.wednesday"),
+    t("upcoming.days.thursday"),
+    t("upcoming.days.friday"),
+    t("upcoming.days.saturday"),
+  ];
+
+  const events: CalendarEvent[] = [
+    {
+      id: "1",
+      date: "2025-08-29",
+      title: t("courses.programming.algorithms"),
+      course: t("courses.programming.algorithms"),
+      day: 1,
+      mentor: t("mentors.list.1.name") + ", " + t("mentors.list.3.name"),
+      time: "16:00 - 19:00",
+      type: "regular",
+      level: t("upcoming.beginner"),
+      description: t("upcoming.desc.aps"),
+    },
+    {
+      id: "2",
+      date: "2025-08-30",
+      title: t("courses.programming.algorithms"),
+      course: t("courses.programming.algorithms"),
+      day: 2,
+      mentor: t("mentors.list.1.name") + ", " + t("mentors.list.3.name"),
+      time: "16:00 - 19:00",
+      type: "regular",
+      level: t("upcoming.beginner"),
+      description: t("upcoming.desc.aps"),
+    },
+    {
+      id: "3",
+      date: "2025-08-31",
+      title: t("courses.programming.algorithms"),
+      course: t("courses.programming.algorithms"),
+      day: 3,
+      mentor: t("mentors.list.1.name") + ", " + t("mentors.list.3.name"),
+      time: "16:00 - 19:00",
+      type: "regular",
+      level: t("upcoming.beginner"),
+      description: t("upcoming.desc.aps"),
+    },
+    {
+      id: "4",
+      date: "2025-09-01",
+      title: t("courses.programming.algorithms"),
+      course: t("courses.programming.algorithms"),
+      day: 0,
+      mentor: "",
+      time: "",
+      type: "exam",
+      level: t("upcoming.beginner"),
+      description: "",
+    },
+    {
+      id: "5",
+      date: "2025-08-31",
+      title: t("courses.programming.objectOriented"),
+      course: t("courses.programming.objectOriented"),
+      day: 1,
+      mentor: t("mentors.list.1.name") + ", " + t("mentors.list.3.name"),
+      time: "12:00 - 15:00",
+      type: "regular",
+      level: t("upcoming.beginner"),
+      description: t("upcoming.desc.oop"),
+    },
+    {
+      id: "6",
+      date: "2025-09-01",
+      title: t("courses.programming.objectOriented"),
+      course: t("courses.programming.objectOriented"),
+      day: 1,
+      mentor: t("mentors.list.1.name") + ", " + t("mentors.list.3.name"),
+      time: "17:00 - 20:00",
+      type: "regular",
+      level: t("upcoming.beginner"),
+      description: t("upcoming.desc.oop"),
+    },
+    {
+      id: "7",
+      date: "2025-09-02",
+      title: t("courses.programming.objectOriented"),
+      course: t("courses.programming.objectOriented"),
+      day: 1,
+      mentor: t("mentors.list.1.name") + ", " + t("mentors.list.3.name"),
+      time: "17:00 - 20:00",
+      type: "regular",
+      level: t("upcoming.beginner"),
+      description: t("upcoming.desc.oop"),
+    },
+    {
+      id: "8",
+      date: "2025-09-03",
+      title: t("courses.programming.objectOriented"),
+      course: t("courses.programming.objectOriented"),
+      day: 1,
+      mentor: t("mentors.list.1.name") + ", " + t("mentors.list.3.name"),
+      time: "17:00 - 20:00",
+      type: "regular",
+      level: t("upcoming.beginner"),
+      description: t("upcoming.desc.oop"),
+    },
+    {
+      id: "9",
+      date: "2025-09-04",
+      title: t("courses.programming.objectOriented"),
+      course: t("courses.programming.objectOriented"),
+      day: 0,
+      mentor: "",
+      time: "",
+      type: "exam",
+      level: t("upcoming.beginner"),
+      description: "",
+    },
+  ];
 
   const nextMonth = () => {
     setCurrentDate(
@@ -308,7 +262,7 @@ export default function EventsCalendar() {
             className="h-5 w-5 sm:h-6 sm:w-6 text-green-600"
             aria-hidden="true"
           />
-          Calendar for Events and Courses
+          {t("upcoming.calendar")}
         </h2>
         <div className="flex items-center gap-2 sm:gap-4">
           <Button
@@ -324,7 +278,7 @@ export default function EventsCalendar() {
             }`}
           >
             <ChevronLeft className="h-4 w-4" aria-hidden="true" />
-            <span className="sr-only">Previous month</span>
+            <span className="sr-only">{t("upcoming.prev_month")}</span>
           </Button>
           <span
             className="text-base sm:text-lg font-semibold min-w-[120px] sm:min-w-[150px] text-center"
@@ -345,7 +299,7 @@ export default function EventsCalendar() {
             }`}
           >
             <ChevronRight className="h-4 w-4" aria-hidden="true" />
-            <span className="sr-only">Next month</span>
+            <span className="sr-only">{t("upcoming.next_month")}</span>
           </Button>
         </div>
       </div>
@@ -414,7 +368,7 @@ export default function EventsCalendar() {
                     <div
                       key={event.id}
                       className={`w-full text-xs p-1 rounded text-white truncate ${
-                        event.type === "exam" ? "bg-yellow-500" : "bg-green-600"
+                        event.type === "exam" ? "bg-yellow-600" : "bg-green-600"
                       }`}
                       title={event.title}
                       aria-label={`${event.title}, ${event.time}`}
@@ -452,77 +406,142 @@ export default function EventsCalendar() {
             </DialogTitle>
           </DialogHeader>
 
-          {selectedEvent && (
-            <div className="space-y-4" id="event-description">
-              <div className="flex flex-wrap items-center gap-2">
-                <Badge
-                  variant={
-                    selectedEvent.type === "exam" ? "destructive" : "default"
-                  }
-                >
-                  {selectedEvent.type === "exam" ? "EXAM DAY" : "Regular Class"}
-                </Badge>
-                <Badge variant="outline">{selectedEvent.level}</Badge>
-              </div>
+          {selectedEvent &&
+            (() => {
+              const dayEvents = getEventsForDate(
+                new Date(selectedEvent.date).getDate()
+              );
+              const currentIndex = dayEvents.findIndex(
+                (event) => event.id === selectedEvent.id
+              );
+              const hasMultipleEvents = dayEvents.length > 1;
 
-              <div className="space-y-3 text-sm">
-                <div className="flex items-center gap-2">
-                  <BookOpen
-                    className="h-4 w-4 text-gray-500 flex-shrink-0"
-                    aria-hidden="true"
-                  />
-                  <span className="font-medium">Course:</span>
-                  <span>{selectedEvent.course}</span>
-                </div>
+              return (
+                <>
+                  {hasMultipleEvents && (
+                    <div className="flex items-center justify-between mb-2">
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={() =>
+                          setSelectedEvent(dayEvents[currentIndex - 1])
+                        }
+                        disabled={currentIndex === 0}
+                        aria-label="Previous event"
+                      >
+                        <ChevronLeft className="h-4 w-4" />
+                      </Button>
+                      <span className="text-sm text-gray-500">
+                        {currentIndex + 1} / {dayEvents.length}
+                      </span>
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={() =>
+                          setSelectedEvent(dayEvents[currentIndex + 1])
+                        }
+                        disabled={currentIndex === dayEvents.length - 1}
+                        aria-label="Next event"
+                      >
+                        <ChevronRight className="h-4 w-4" />
+                      </Button>
+                    </div>
+                  )}
 
-                {selectedEvent.day > 0 && (
-                  <div className="flex items-center gap-2">
-                    <Award
-                      className="h-4 w-4 text-gray-500 flex-shrink-0"
-                      aria-hidden="true"
-                    />
-                    <span className="font-medium">Day:</span>
-                    <span>Day {selectedEvent.day}</span>
+                  <div className="space-y-4" id="event-description">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <Badge
+                        className={
+                          selectedEvent.type === "exam"
+                            ? "bg-red-600 text-white hover:bg-red-700"
+                            : "bg-green-600 text-white hover:bg-green-700"
+                        }
+                      >
+                        {selectedEvent.type === "exam"
+                          ? t("upcoming.exam")
+                          : t("upcoming.class")}
+                      </Badge>
+                      <Badge variant="outline">{selectedEvent.level}</Badge>
+                    </div>
+
+                    <div className="space-y-3 text-sm">
+                      <div className="flex items-center gap-2">
+                        <BookOpen
+                          className="h-4 w-4 text-gray-500 flex-shrink-0"
+                          aria-hidden="true"
+                        />
+                        <span className="font-medium">
+                          {t("upcoming.course")}
+                        </span>
+                        <span>{selectedEvent.course}</span>
+                      </div>
+
+                      {selectedEvent.day > 0 && (
+                        <div className="flex items-center gap-2">
+                          <Award
+                            className="h-4 w-4 text-gray-500 flex-shrink-0"
+                            aria-hidden="true"
+                          />
+                          <span className="font-medium">
+                            {t("upcoming.day")}
+                          </span>
+                          <span>
+                            {t("upcoming.dayX")} {selectedEvent.day}
+                          </span>
+                        </div>
+                      )}
+
+                      <div className="flex items-center gap-2">
+                        <User
+                          className="h-4 w-4 text-gray-500 flex-shrink-0"
+                          aria-hidden="true"
+                        />
+                        <span className="font-medium">
+                          {t("upcoming.mentor")}
+                        </span>
+                        <span>{selectedEvent.mentor}</span>
+                      </div>
+
+                      <div className="flex items-center gap-2">
+                        <Calendar
+                          className="h-4 w-4 text-gray-500 flex-shrink-0"
+                          aria-hidden="true"
+                        />
+                        <span className="font-medium">
+                          {t("upcoming.date")}
+                        </span>
+                        <span>
+                          {new Date(selectedEvent.date)
+                            .toLocaleDateString("en-GB", {
+                              day: "2-digit",
+                              month: "2-digit",
+                              year: "numeric",
+                            })
+                            .replace(/\//g, ".")}
+                        </span>
+                      </div>
+
+                      <div className="flex items-center gap-2">
+                        <Clock
+                          className="h-4 w-4 text-gray-500 flex-shrink-0"
+                          aria-hidden="true"
+                        />
+                        <span className="font-medium">
+                          {t("upcoming.time")}
+                        </span>
+                        <span>{selectedEvent.time}</span>
+                      </div>
+
+                      <div className="pt-2 border-t">
+                        <p className="text-sm text-gray-600">
+                          {selectedEvent.description}
+                        </p>
+                      </div>
+                    </div>
                   </div>
-                )}
-
-                <div className="flex items-center gap-2">
-                  <User
-                    className="h-4 w-4 text-gray-500 flex-shrink-0"
-                    aria-hidden="true"
-                  />
-                  <span className="font-medium">Mentor:</span>
-                  <span>{selectedEvent.mentor}</span>
-                </div>
-
-                <div className="flex items-center gap-2">
-                  <Calendar
-                    className="h-4 w-4 text-gray-500 flex-shrink-0"
-                    aria-hidden="true"
-                  />
-                  <span className="font-medium">Date:</span>
-                  <span>
-                    {new Date(selectedEvent.date).toLocaleDateString()}
-                  </span>
-                </div>
-
-                <div className="flex items-center gap-2">
-                  <Clock
-                    className="h-4 w-4 text-gray-500 flex-shrink-0"
-                    aria-hidden="true"
-                  />
-                  <span className="font-medium">Time:</span>
-                  <span>{selectedEvent.time}</span>
-                </div>
-
-                <div className="pt-2 border-t">
-                  <p className="text-sm text-gray-600">
-                    {selectedEvent.description}
-                  </p>
-                </div>
-              </div>
-            </div>
-          )}
+                </>
+              );
+            })()}
         </DialogContent>
       </Dialog>
     </section>
