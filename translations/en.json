@@ -4,6 +4,7 @@
     "events": "Events",
     "courses": "Courses",
     "about": "About",
+    "promo": "Promo Packs",
     "blog": "Blog",
     "contact": "Contact",
     "faq": "FAQ",
@@ -18,6 +19,54 @@
     "upcoming-description": "Stay updated with our latest course schedules and special events.",
     "why-kodrum": "Why Choose Kodrum?",
     "why-kodrum-description": "Discover what makes us Macedonia's premier technology education center"
+  },
+  "upcoming": {
+    "title": "Upcoming Events & Courses",
+    "description": "Stay updated with our latest course schedules and special events.",
+    "calendar": "Calendar for Events and Courses",
+    "prev_month": "Previous month",
+    "next_month": "Next month",
+    "exam": "EXAM DAY",
+    "class": "Regular Class",
+    "course": "Course",
+    "day": "Day",
+    "dayX": "Day",
+    "mentor": "Mentor",
+    "date": "Date",
+    "time": "Time",
+    "beginner": "Beginner",
+    "intermediate": "Intermediate",
+    "advanced": "Advanced",
+    "desc": {
+      "aps": "Introduction to algorithms and data structures fundamentals",
+      "oop": "Object-oriented programming principles and practices",
+      "calculus": "Calculus/Mathematics 1 lectures",
+      "structured": "Structured programming lectures"
+    }
+  },
+  "mentors": {
+    "programming": [
+      {
+        "name": "Stefan Saveski"
+      },
+      {
+        "name": "Gjorgji Stamkovski"
+      },
+      {
+        "name": "Petar Hristovski"
+      },
+      {
+        "name": "Boris Gjorgjievski"
+      }
+    ],
+    "mathProgramming": [
+      {
+        "name": "Hristijan Saveski"
+      },
+      {
+        "name": "Borjan Dimeski"
+      }
+    ]
   },
   "why": {
     "features": [
@@ -83,6 +132,9 @@
         "algorithms": {
           "description": "Master essential algorithms and data structures for competitive programming and interviews"
         },
+        "structuredProgramming": {
+          "description": "Learn structured programming fundamentals with C++ and build a solid foundation for software development"
+        },
         "objectOriented": {
           "description": "Learn object-oriented programming fundamentals with C++ and build a solid foundation for software development"
         },
@@ -116,11 +168,31 @@
   },
   "contact": {
     "title": "Contact Us",
+    "subtitle": "Ready to start your learning journey? We're here to help you every step of the way.",
     "getInTouch": "Get in Touch",
+    "chooseWay": "Choose the way that works best for you",
     "address": "Address",
     "phone": "Phone",
     "email": "Email",
-    "hours": "Working Hours"
+    "hours": "Working Hours",
+    "liveChat": "Live Chat",
+    "scheduleVisit": "Schedule Visit",
+    "callDuring": "Call us during business hours",
+    "respond24": "We respond within 24 hours",
+    "instantSupport": "Instant support for quick questions",
+    "availableWebsite": "Available on website",
+    "monFri": "Mon-Fri 9AM-6PM",
+    "bookTour": "Book a tour",
+    "seeFacilities": "See our facilities",
+    "visitModern": "Visit our modern learning spaces",
+    "findUs": "Find Us",
+    "locatedHeart": "Located in the heart of Skopje, easily accessible by public transport",
+    "learningEnvironment": "Learning Environment",
+    "modernClassrooms": "Modern classrooms with high-speed internet and latest technology",
+    "publicTransport": "Public Transport",
+    "transportInfo": "Best: Bus 17, 27 | Also: 3, 3a, 3b, 5, 7, 15, 15a, 23, 35 - Stop: Posledna 5ka",
+    "parking": "Parking",
+    "parkingInfo": "Free parking in Kodrum's yard (12 spaces) and free street parking near the center"
   },
   "footer": {
     "description": "Empowering learners of all ages with cutting-edge technology education.",
@@ -214,9 +286,9 @@
   "aboutPage": {
     "title": "About Kodrum",
     "subtitle": "Empowering learners of all ages with cutting-edge technology education since 2023",
-    "yearsExcellence": "15+ Years of Excellence",
-    "graduates": "2000+ Graduates",
-    "successRate": "95% Success Rate",
+    "yearsExcellence": "70+ Passed Students",
+    "graduates": "15+ Preparations",
+    "successRate": "80% Success Rate",
     "foundation": {
       "title": "Our Foundation",
       "subtitle": "The principles that guide our educational mission and drive our success"
@@ -254,10 +326,10 @@
     "achievements": {
       "title": "Our Achievements",
       "subtitle": "Numbers that reflect our commitment to excellence and student success",
-      "studentsGraduated": "Students Graduated",
-      "jobPlacement": "Job Placement Rate",
-      "industryPartners": "Industry Partners",
-      "yearsOfExcellence": "Years of Excellence"
+      "studentsEnrolled": "Enrolled Students",
+      "activeCourses": "Active Courses",
+      "expertMentors": "Expert Mentors",
+      "yearsExperience": "Years Experience"
     },
     "team": {
       "title": "Meet Our Expert Team",
@@ -635,6 +707,10 @@
     "whatsIncluded": "What's Included:",
     "minimum": "Minimum:",
     "choosePackage": "Choose This Package",
+    "mostPopular": "Most Popular",
+    "premium": "Premium",
+    "save": "Save",
+    "off": "OFF",
     "why": {
       "title": "Why Choose Our Packages?",
       "betterValue": {
@@ -648,6 +724,49 @@
       "premiumSupport": {
         "title": "Premium Support",
         "description": "Enhanced mentorship and career guidance included"
+      }
+    },
+    "packs": {
+      "combo": {
+        "title": "Programming Combo Pack",
+        "description": "Perfect for aspiring programmers",
+        "courses": ["Structured Programming", "Algorithms and Data Structures"],
+        "features": [
+          "2 Complete Programming Courses",
+          "4 Months of Learning",
+          "Certificate of Completion",
+          "Project Portfolio",
+          "Job Placement Assistance"
+        ],
+        "timeLimit": "Limited time offer"
+      },
+      "mathProgramming": {
+        "title": "Math + Programming Bundle",
+        "description": "Strong foundation in math and coding",
+        "courses": ["Calculus/Math 1", "Structured Programming", "Discrete Mathematics"],
+        "features": [
+          "3 Comprehensive Courses",
+          "Mathematical Foundation",
+          "Programming Skills",
+          "6 Months Access",
+          "Personal Mentor Support"
+        ]
+      },
+      "friends": {
+        "title": "Friends Pack",
+        "description": "Bring a friend and save together",
+        "courses": ["Any Course of Choice"],
+        "originalPrice": "Per Person: 3,500 MKD",
+        "discountPrice": "Per Person: 2,800 MKD",
+        "savings": "700 MKD each",
+        "features": [
+          "Choose Any Course",
+          "Study Together",
+          "Group Projects",
+          "Shared Resources",
+          "Friendship Bonus Activities"
+        ],
+        "minParticipants": "2+ friends"
       }
     }
   },

@@ -21,27 +21,30 @@ export function FeaturedCourses() {
       id: "algorithms-data-structures",
       icon: Database,
       title: t("courses.programming.algorithms"),
-  description: t("courses.active-courses-items.items.algorithms.description"),
+      description: t("courses.active-courses-items.items.algorithms.description"),
       instructor: "Boris Gj. and Stefan S.",
-      startDate: "August 29, 2024",
+      startDate: "November 7, 2025",
       duration: "4 days",
       level: t("levels.intermediate"),
       price: "2500 MKD",
       color: "bg-cyan-100 text-cyan-700",
+      link:"https://forms.gle/wMtLd65ZtaX9YoE2A",
       status: t("courses.status.enrolling"),
     },
     {
-      id: "object-oriented",
+      id: "structured-programming",
       icon: Code,
       title: t("courses.programming.structuredProgramming"),
   description: t("courses.active-courses-items.items.structuredProgramming.description"),
-      instructor: "Stefan Saveski",
-      startDate: "August 31, 2024",
+      instructor: "Boris Gj. and Stefan S.",
+      startDate: "November 7, 2025",
       duration: "4 days",
       level: t("levels.beginner"),
       price: "2,500 MKD",
       color: "bg-teal-600 text-white",
       status: t("courses.status.enrolling"),
+      link:"https://forms.gle/KYX3fhruYqFJWS9z5",
+
     },
     {
       id: "calculus",
@@ -49,12 +52,14 @@ export function FeaturedCourses() {
       title: t("courses.math.calculus1"),
   description: t("courses.active-courses-items.items.calculus.description"),
       instructor: "Borjan Dimeski",
-      startDate: "September 7, 2024",
+      startDate: "November 1, 2024",
       duration: "3 days",
       level: t("levels.beginner"),
       price: "2500 MKD",
       color: "bg-teal-100 text-teal-700",
       status: t("courses.status.enrolling"),
+      link:"https://forms.gle/qhYi1zcCxvX78hYb7",
+
     },
   ];
 
@@ -135,7 +140,7 @@ export function FeaturedCourses() {
                       className="flex-1 bg-teal-600 hover:bg-teal-700 text-white font-semibold"
                       asChild
                     >
-                      <Link href="/contact">{t("courses.enlist")}</Link>
+                      <Link href={course.link} target="_blank">{t("courses.enlist")}</Link>
                     </Button>
                     <Button
                       variant="outline"

@@ -60,9 +60,9 @@ export default function ContactPage() {
     {
       icon: Phone,
       title: t("contact.phone"),
-      primary: "+389 75 295 582",
-      secondary: "+389 75 295 582",
-      description: "Call us during business hours",
+      primary: "+389 75 295{\" \"}582",
+      secondary: "+389 75 295{\" \"}582",
+      description: t("contact.callDuring"),
       color: "bg-teal-100 text-teal-700",
     },
     {
@@ -70,23 +70,23 @@ export default function ContactPage() {
       title: t("contact.email"),
       primary: "kodrum.mk@gmail.com",
       secondary: "kodrum.mk@gmail.com",
-      description: "We respond within 24 hours",
+      description: t("contact.respond24"),
       color: "bg-teal-100 text-teal-700",
     },
     {
       icon: MessageSquare,
-      title: "Live Chat",
-      primary: "Available on website",
-      secondary: "Mon-Fri 9AM-6PM",
-      description: "Instant support for quick questions",
+      title: t("contact.liveChat"),
+      primary: t("contact.availableWebsite"),
+      secondary: t("contact.monFri"),
+      description: t("contact.instantSupport"),
       color: "bg-cyan-100 text-cyan-700",
     },
     {
       icon: Calendar,
-      title: "Schedule Visit",
-      primary: "Book a tour",
-      secondary: "See our facilities",
-      description: "Visit our modern learning spaces",
+      title: t("contact.scheduleVisit"),
+      primary: t("contact.bookTour"),
+      secondary: t("contact.seeFacilities"),
+      description: t("contact.visitModern"),
       color: "bg-teal-100 text-teal-700",
     },
   ];
@@ -100,26 +100,26 @@ export default function ContactPage() {
   const departments = [
     {
       name: "Admissions",
-      email: "kodrum.mk@gmail.com",
-      phone: "+389 75 295 582",
+      email: "admissions@techedu.mk",
+      phone: "+389 2 123 4567",
       description: "Course enrollment and program information",
     },
     {
       name: "Student Support",
-      email: "kodrum.mk@gmail.com",
-      phone: "+389 75 295 582",
+      email: "support@techedu.mk",
+      phone: "+389 2 123 4568",
       description: "Academic support and student services",
     },
     {
       name: "Corporate Training",
-      email: "kodrum.mk@gmail.com",
-      phone: "+389 75 295 582",
+      email: "corporate@techedu.mk",
+      phone: "+389 2 123 4569",
       description: "Custom training solutions for businesses",
     },
     {
       name: "Technical Support",
-      email: "kodrum.mk@gmail.com",
-      phone: "+389 75 295 582",
+      email: "tech@techedu.mk",
+      phone: "+389 2 123 4570",
       description: "Platform and technical assistance",
     },
   ];
@@ -134,8 +134,7 @@ export default function ContactPage() {
               {t("contact.title")}
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Ready to start your learning journey? We're here to help you every
-              step of the way.
+              {t("contact.subtitle")}
             </p>
           </div>
         </div>
@@ -146,10 +145,10 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Get in Touch
+              {t("contact.getInTouch")}
             </h2>
             <p className="text-xl text-gray-600">
-              Choose the way that works best for you
+              {t("contact.chooseWay")}
             </p>
           </div>
 
@@ -183,15 +182,9 @@ export default function ContactPage() {
                   </CardHeader>
                   <CardContent>
                     <p className="font-semibold text-gray-900 mb-1">
-                      {method.title === t("contact.phone") 
-                        ? method.primary.slice(0, -3) + " " + method.primary.slice(-3)
-                        : method.primary}
+                      {method.primary}
                     </p>
-                    <p className="text-sm text-gray-600">
-                      {method.title === t("contact.phone") && method.secondary
-                        ? method.secondary.slice(0, -3) + " " + method.secondary.slice(-3)
-                        : method.secondary}
-                    </p>
+                    <p className="text-sm text-gray-600">{method.secondary}</p>
                   </CardContent>
                 </Card>
               );
@@ -200,11 +193,11 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Main Contact Section */}
+{/* 
       <section className="py-20 bg-teal-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Contact Form */}
+
             <Card className="h-fit shadow-xl border-2 hover:border-teal-200 transition-colors">
               <CardHeader className="bg-gradient-to-r from-teal-500 to-cyan-500 text-white rounded-t-lg">
                 <CardTitle className="text-2xl font-bold">
@@ -304,9 +297,8 @@ export default function ContactPage() {
               </CardContent>
             </Card>
 
-            {/* Contact Information */}
             <div className="space-y-8">
-              {/* Address & Hours */}
+
               <Card className="shadow-xl border-2 hover:border-teal-200 transition-colors">
                 <CardHeader className="bg-gradient-to-r from-teal-500 to-cyan-500 text-white rounded-t-lg">
                   <CardTitle className="flex items-center text-xl font-bold">
@@ -352,7 +344,6 @@ export default function ContactPage() {
                 </CardContent>
               </Card>
 
-              {/* Departments */}
               <Card className="shadow-xl border-2 hover:border-teal-200 transition-colors">
                 <CardHeader className="bg-gradient-to-r from-teal-500 to-cyan-500 text-white rounded-t-lg">
                   <CardTitle className="flex items-center text-xl font-bold">
@@ -377,9 +368,7 @@ export default function ContactPage() {
                           <span className="text-teal-700 font-medium">
                             {dept.email}
                           </span>
-                          <span className="text-gray-600">
-                            {dept.phone.slice(0, -3)}{" "}{dept.phone.slice(-3)}
-                          </span>
+                          <span className="text-gray-600">{dept.phone}</span>
                         </div>
                       </div>
                     ))}
@@ -387,7 +376,6 @@ export default function ContactPage() {
                 </CardContent>
               </Card>
 
-              {/* Quick Actions */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <Button className="bg-teal-600 hover:bg-teal-700 text-white py-4 rounded-lg shadow-lg hover:shadow-xl transition-all">
                   <Calendar className="mr-2 h-4 w-4" />
@@ -404,16 +392,15 @@ export default function ContactPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Map Section */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Find Us</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">{t("contact.findUs")}</h2>
             <p className="text-gray-600">
-              Located in the heart of Skopje, easily accessible by public
-              transport
+              {t("contact.locatedHeart")}
             </p>
           </div>
 
@@ -433,27 +420,25 @@ export default function ContactPage() {
           <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
             <div className="p-4 bg-teal-50 rounded-lg border border-teal-200">
               <Badge className="bg-teal-100 text-teal-700 mb-2">
-                Learning Environment
+                {t("contact.learningEnvironment")}
               </Badge>
               <p className="text-sm text-gray-600">
-                Modern classrooms with high-speed internet and latest technology
+                {t("contact.modernClassrooms")}
               </p>
             </div>
             <div className="p-4 bg-teal-50 rounded-lg border border-teal-200">
               <Badge className="bg-teal-100 text-teal-700 mb-2">
-                Public Transport
+                {t("contact.publicTransport")}
               </Badge>
               <p className="text-sm text-gray-600">
-                Best: Bus 17, 27 | Also: 3, 3a, 3b, 5, 7, 15, 15a, 23, 35 -
-                Stop: Posledna 5ka
+                {t("contact.transportInfo")}
               </p>
             </div>
 
             <div className="p-4 bg-cyan-50 rounded-lg border border-cyan-200">
-              <Badge className="bg-cyan-100 text-cyan-700 mb-2">Parking</Badge>
+              <Badge className="bg-cyan-100 text-cyan-700 mb-2">{t("contact.parking")}</Badge>
               <p className="text-sm text-gray-600">
-                Free parking in Kodrum's yard (4 spaces) and free street parking
-                near the center
+                {t("contact.parkingInfo")}
               </p>
             </div>
           </div>

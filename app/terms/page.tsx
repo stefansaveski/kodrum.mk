@@ -58,7 +58,7 @@ export default function TermsPage() {
             </CardContent>
           </Card>
 
-          <Card className="border-teal-100">
+          {/* <Card className="border-teal-100">
             <CardHeader>
               <CardTitle className="text-xl text-teal-700">
                 {t("terms.refund.title")}
@@ -71,7 +71,7 @@ export default function TermsPage() {
                 ))}
               </ul>
             </CardContent>
-          </Card>
+          </Card> */}
 
           <Card className="border-teal-100">
             <CardHeader>

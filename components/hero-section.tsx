@@ -23,7 +23,7 @@ export function HeroSection() {
             {t("hero.subtitle")}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Link href="/courses">
+            <Link href="#pripremi">
               <Button
                 size="lg"
                 className="bg-teal-500 hover:bg-teal-600 text-white font-semibold px-8 py-4 text-lg"

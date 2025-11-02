@@ -68,10 +68,10 @@ export default function AboutPage() {
   ];
 
   const achievements = [
-    { number: "2000+", label: t("aboutPage.achievements.studentsGraduated") },
-    { number: "95%", label: t("aboutPage.achievements.jobPlacement") },
-    { number: "50+", label: t("aboutPage.achievements.industryPartners") },
-    { number: "15+", label: t("aboutPage.achievements.yearsOfExcellence") },
+    { number: "70+", label: t("aboutPage.achievements.studentsEnrolled") },
+    { number: "12", label: t("aboutPage.achievements.activeCourses") },
+    { number: "5", label: t("aboutPage.achievements.expertMentors") },
+    { number: "2+", label: t("aboutPage.achievements.yearsExperience") },
   ];
 
   return (
@@ -223,11 +223,11 @@ export default function AboutPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {achievements.map((achievement, index) => (
               <div key={index} className="text-center group">
-                <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-6 group-hover:bg-white/30 transition-all duration-300 group-hover:scale-110 border border-white/20">
-                  <div className="text-4xl md:text-6xl font-bold text-white mb-2 group-hover:scale-105 transition-transform duration-300">
+                <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-6 h-40 flex flex-col items-center justify-center group-hover:bg-white/30 transition-all duration-300 group-hover:scale-110 border border-white/20">
+                  <div className="text-4xl md:text-5xl font-bold text-white mb-3 group-hover:scale-105 transition-transform duration-300">
                     {achievement.number}
                   </div>
-                  <div className="text-white/90 font-medium text-lg">
+                  <div className="text-white/90 font-medium text-base md:text-lg text-center">
                     {achievement.label}
                   </div>
                 </div>

@@ -37,6 +37,9 @@ interface CalendarEvent {
 
 export default function EventsCalendar() {
   const { t } = useTranslation();
+  const monthNames = t("calendar.months", { returnObjects: true }) as string[];
+  const dayNames = t("calendar.days", { returnObjects: true }) as string[];
+  
   const [selectedEvent, setSelectedEvent] = useState<CalendarEvent | null>(
     null
   );
@@ -61,138 +64,142 @@ export default function EventsCalendar() {
 
   const daysInMonth = getDaysInMonth(currentDate);
   const firstDay = getFirstDayOfMonth(currentDate);
-  const monthNames = [
-    t("upcoming.months.january"),
-    t("upcoming.months.february"),
-    t("upcoming.months.march"),
-    t("upcoming.months.april"),
-    t("upcoming.months.may"),
-    t("upcoming.months.june"),
-    t("upcoming.months.july"),
-    t("upcoming.months.august"),
-    t("upcoming.months.september"),
-    t("upcoming.months.october"),
-    t("upcoming.months.november"),
-    t("upcoming.months.december"),
-  ];
-  const dayNames = [
-    t("upcoming.days.sunday"),
-    t("upcoming.days.monday"),
-    t("upcoming.days.tuesday"),
-    t("upcoming.days.wednesday"),
-    t("upcoming.days.thursday"),
-    t("upcoming.days.friday"),
-    t("upcoming.days.saturday"),
-  ];
 
   const events: CalendarEvent[] = [
+    // Calculus lectures - Nov 1, 2, 8
     {
       id: "1",
-      date: "2025-08-29",
-      title: t("courses.programming.algorithms"),
-      course: t("courses.programming.algorithms"),
+      date: "2025-11-01",
+      title: t("courses.math.calculus1"),
+      course: t("courses.math.calculus1"),
       day: 1,
-      mentor: t("mentors.list.1.name") + ", " + t("mentors.list.3.name"),
-      time: "16:00 - 19:00",
+      mentor: t("mentors.mathProgramming.1.name"),
+      time: "14:00",
       type: "regular",
       level: t("upcoming.beginner"),
-      description: t("upcoming.desc.aps"),
+      description: t("upcoming.desc.calculus"),
     },
     {
       id: "2",
-      date: "2025-08-30",
-      title: t("courses.programming.algorithms"),
-      course: t("courses.programming.algorithms"),
+      date: "2025-11-02",
+      title: t("courses.math.calculus1"),
+      course: t("courses.math.calculus1"),
       day: 2,
-      mentor: t("mentors.list.1.name") + ", " + t("mentors.list.3.name"),
-      time: "16:00 - 19:00",
+      mentor: t("mentors.mathProgramming.1.name"),
+      time: "14:00",
       type: "regular",
       level: t("upcoming.beginner"),
-      description: t("upcoming.desc.aps"),
+      description: t("upcoming.desc.calculus"),
     },
     {
       id: "3",
-      date: "2025-08-31",
+      date: "2025-11-08",
+      title: t("courses.math.calculus1"),
+      course: t("courses.math.calculus1"),
+      day: 3,
+      mentor: t("mentors.mathProgramming.1.name"),
+      time: "14:00",
+      type: "regular",
+      level: t("upcoming.beginner"),
+      description: t("upcoming.desc.calculus"),
+    },
+    // Algorithms and Data Structures - Nov 7, 8, 9, 15
+    {
+      id: "4",
+      date: "2025-11-07",
       title: t("courses.programming.algorithms"),
       course: t("courses.programming.algorithms"),
-      day: 3,
-      mentor: t("mentors.list.1.name") + ", " + t("mentors.list.3.name"),
-      time: "16:00 - 19:00",
+      day: 1,
+      mentor: t("mentors.programming.0.name") + ", " + t("mentors.programming.3.name"),
+      time: "12:00 - 15:00",
       type: "regular",
       level: t("upcoming.beginner"),
       description: t("upcoming.desc.aps"),
     },
     {
-      id: "4",
-      date: "2025-09-01",
+      id: "5",
+      date: "2025-11-08",
       title: t("courses.programming.algorithms"),
       course: t("courses.programming.algorithms"),
-      day: 0,
-      mentor: "",
-      time: "",
-      type: "exam",
-      level: t("upcoming.beginner"),
-      description: "",
-    },
-    {
-      id: "5",
-      date: "2025-08-31",
-      title: t("courses.programming.objectOriented"),
-      course: t("courses.programming.objectOriented"),
-      day: 1,
-      mentor: t("mentors.list.1.name") + ", " + t("mentors.list.3.name"),
+      day: 2,
+      mentor: t("mentors.programming.0.name") + ", " + t("mentors.programming.3.name"),
       time: "12:00 - 15:00",
       type: "regular",
       level: t("upcoming.beginner"),
-      description: t("upcoming.desc.oop"),
+      description: t("upcoming.desc.aps"),
     },
     {
       id: "6",
-      date: "2025-09-01",
-      title: t("courses.programming.objectOriented"),
-      course: t("courses.programming.objectOriented"),
-      day: 1,
-      mentor: t("mentors.list.1.name") + ", " + t("mentors.list.3.name"),
-      time: "17:00 - 20:00",
+      date: "2025-11-09",
+      title: t("courses.programming.algorithms"),
+      course: t("courses.programming.algorithms"),
+      day: 3,
+      mentor: t("mentors.programming.0.name") + ", " + t("mentors.programming.3.name"),
+      time: "12:00 - 15:00",
       type: "regular",
       level: t("upcoming.beginner"),
-      description: t("upcoming.desc.oop"),
+      description: t("upcoming.desc.aps"),
     },
     {
       id: "7",
-      date: "2025-09-02",
-      title: t("courses.programming.objectOriented"),
-      course: t("courses.programming.objectOriented"),
-      day: 1,
-      mentor: t("mentors.list.1.name") + ", " + t("mentors.list.3.name"),
-      time: "17:00 - 20:00",
+      date: "2025-11-15",
+      title: t("courses.programming.algorithms"),
+      course: t("courses.programming.algorithms"),
+      day: 4,
+      mentor: t("mentors.programming.0.name") + ", " + t("mentors.programming.3.name"),
+      time: "12:00 - 15:00",
       type: "regular",
       level: t("upcoming.beginner"),
-      description: t("upcoming.desc.oop"),
+      description: t("upcoming.desc.aps"),
     },
+    // Structured Programming - Nov 7, 8, 9, 15
     {
       id: "8",
-      date: "2025-09-03",
-      title: t("courses.programming.objectOriented"),
-      course: t("courses.programming.objectOriented"),
+      date: "2025-11-07",
+      title: t("courses.programming.structuredProgramming"),
+      course: t("courses.programming.structuredProgramming"),
       day: 1,
-      mentor: t("mentors.list.1.name") + ", " + t("mentors.list.3.name"),
-      time: "17:00 - 20:00",
+      mentor: t("mentors.programming.0.name") + ", " + t("mentors.programming.3.name"),
+      time: "15:00 - 18:00",
       type: "regular",
       level: t("upcoming.beginner"),
-      description: t("upcoming.desc.oop"),
+      description: t("upcoming.desc.structured"),
     },
     {
       id: "9",
-      date: "2025-09-04",
-      title: t("courses.programming.objectOriented"),
-      course: t("courses.programming.objectOriented"),
-      day: 0,
-      mentor: "",
-      time: "",
-      type: "exam",
+      date: "2025-11-08",
+      title: t("courses.programming.structuredProgramming"),
+      course: t("courses.programming.structuredProgramming"),
+      day: 2,
+      mentor: t("mentors.programming.0.name") + ", " + t("mentors.programming.3.name"),
+      time: "15:00 - 18:00",
+      type: "regular",
       level: t("upcoming.beginner"),
-      description: "",
+      description: t("upcoming.desc.structured"),
+    },
+    {
+      id: "10",
+      date: "2025-11-09",
+      title: t("courses.programming.structuredProgramming"),
+      course: t("courses.programming.structuredProgramming"),
+      day: 3,
+      mentor: t("mentors.programming.0.name") + ", " + t("mentors.programming.3.name"),
+      time: "15:00 - 18:00",
+      type: "regular",
+      level: t("upcoming.beginner"),
+      description: t("upcoming.desc.structured"),
+    },
+    {
+      id: "11",
+      date: "2025-11-15",
+      title: t("courses.programming.structuredProgramming"),
+      course: t("courses.programming.structuredProgramming"),
+      day: 4,
+      mentor: t("mentors.programming.0.name") + ", " + t("mentors.programming.3.name"),
+      time: "15:00 - 18:00",
+      type: "regular",
+      level: t("upcoming.beginner"),
+      description: t("upcoming.desc.structured"),
     },
   ];
 
@@ -335,11 +342,14 @@ export default function EventsCalendar() {
           const day = i + 1;
           const dayEvents = getEventsForDate(day);
           const hasEvents = dayEvents.length > 0;
+          const heightClass = dayEvents.length > 1 
+            ? "h-24 sm:h-32" 
+            : "h-16 sm:h-24";
 
           return (
             <div
               key={day}
-              className="h-16 sm:h-24 border border-gray-200 p-1 relative hover:bg-gray-50 focus-within:ring-2 focus-within:ring-green-500 focus-within:ring-offset-1"
+              className={`${heightClass} border border-gray-200 p-1 relative hover:bg-gray-50 focus-within:ring-2 focus-within:ring-green-500 focus-within:ring-offset-1`}
               role="gridcell"
               aria-label={`${day} ${
                 monthNames[currentDate.getMonth()]
