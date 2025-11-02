@@ -108,36 +108,6 @@
     "advanced": "Advanced",
     "university": "University"
   },
-  "upcoming": {
-    "title": "Распоред на настани и курсеви",
-    "description": "Останете во тек со нашиот распоред на курсеви и настани",
-    "calendar": "Календар за настани и курсеви",
-    "next_month": "Следен месец",
-    "prev_month": "Претходен месец",
-    "months": {
-      "january": "Јануари",
-      "february": "Февруари",
-      "march": "Март",
-      "april": "Април",
-      "may": "Мај",
-      "june": "Јуни",
-      "july": "Јули",
-      "august": "Август",
-      "september": "Септември",
-      "october": "Октомври",
-      "november": "Ноември",
-      "december": "Декември"
-    },
-    "days": {
-      "sunday": "Нед.",
-      "monday": "Пон.",
-      "tuesday": "Вто.",
-      "wednesday": "Сре.",
-      "thursday": "Чет.",
-      "friday": "Пет.",
-      "saturday": "Саб."
-    }
-  },
   "about": {
     "title": "About Our Learning Center",
     "mission": "Our Mission",
@@ -158,35 +128,711 @@
     "privacy": "Privacy Policy",
     "terms": "Terms of Service"
   },
-  "mentors": {
-    "title": "Наши ментори",
-    "description": "Запознајте се со нашите искусни ментори кои ќе ве водат во вашето учење.",
-    "list": [
+  "stories": {
+    "title": "Success Stories",
+    "subtitle": "See how our graduates are making their mark in the tech industry"
+  },
+  "testimonials": {
+    "title": "Hear from Our Learners",
+    "subtitle": "Success stories from students of all ages and backgrounds",
+    "age": "Age",
+    "items": [
       {
-        "name": "Христијан Савески",
-        "position": "Инженер за облак",
-        "bio": "Инженер за облак со искуство во Cloud архитектура и DevOps практики."
+        "name": "University Student",
+        "category": "Mathematics 1 Course",
+        "content": "The instructor has vast experience in Mathematics and explains exam problems effortlessly. If something isn't clear, he explains it in a way we can understand. He should continue teaching this way - there will be no problems at all."
       },
       {
-        "name": "Стефан Савески",
-        "position": "Компетитивен програмер и инструктор",
-        "bio": "Страствен натпреварувачки програмер со повеќекратни награди на национални и меѓународни натпревари по програмирање."
+        "name": "Engineering Student",
+        "category": "Calculus Preparation",
+        "content": "I liked the focus on practical examples and the emphasis on fundamentals from elementary and high school. That's where most confusion happens for students with weak prior knowledge."
       },
       {
-        "name": "Петар Христовски",
-        "position": "Full Stack девелопер и инструктор",
-        "bio": "Full Stack девелопер во EaseAccess24 со искуство во асистивни технологии за луѓе со попреченост."
+        "name": "FINKI Student",
+        "category": "Mathematics Course",
+        "content": "The method of teaching is appropriate, covering both theory for better understanding of context and logic, as well as practical problem-solving which is of utmost importance."
       },
       {
-        "name": "Борис Ѓорѓиевски",
-        "position": "Компетитивен програмер и инструктор",
-        "bio": "Страствен натпреварувачки програмер со повеќекратни награди на национални и меѓународни натпревари по програмирање."
+        "name": "Mathematics Student",
+        "category": "Exam Preparation",
+        "content": "I really liked how the topics were covered and the type of problems that most frequently appear on exams, plus the 'hacks' we were taught for solving them. The teaching was dynamic with enough theory and enough practice problems."
       },
       {
-        "name": "Борјан Димески",
-        "position": "Математичар & програмер",
-        "bio": "Искусен математичар со страст за предавање калкулус и дискретна математика. Комбинира теоретско знаење со практични апликации за програмирање."
+        "name": "University Student",
+        "category": "Math 1 Prep Course",
+        "content": "Problem-solving in a simplified and understandable manner, and the explanation of the problems themselves is top-notch. The dedication to always being there to answer our questions or clarify a problem is excellent."
+      },
+      {
+        "name": "First Year Student",
+        "category": "Calculus Course",
+        "content": "The guy is phenomenal. He should just keep it up! Friendly, knows how to explain, and is overall a cool guy. Great idea and execution. Excellent guys were chosen to explain the problems. Everything was super."
+      },
+      {
+        "name": "Student",
+        "category": "Mathematics Course",
+        "content": "Everything was great, just a bit more emphasis on things we need to know from elementary and high school. That's where the biggest confusion happens for students with weak prior knowledge. The organization is great and the material we cover in class is appropriate."
+      },
+      {
+        "name": "University Student",
+        "category": "Math Preparation",
+        "content": "Great idea and execution. Excellent instructors were chosen to explain the problems. Overall the teaching was well structured, first with theory then with practical problem-solving which is a smart approach."
+      },
+      {
+        "name": "Student",
+        "category": "Exam Preparation",
+        "content": "It was great, dynamic. Enough theory, enough problems. The teaching method is appropriate, covering both theory for better understanding of context and logic, as well as practical problem-solving which is of utmost importance."
       }
     ]
+  },
+  "contactForm": {
+    "title": "Send us a Message",
+    "subtitle": "We'll get back to you within 24 hours",
+    "description": "Ready to start your learning journey? Get in touch with us today!",
+    "namePlaceholder": "Your Name",
+    "emailPlaceholder": "Your Email",
+    "messagePlaceholder": "Your Message",
+    "sendButton": "Send Message"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Find answers to common questions about our courses and services",
+    "searchPlaceholder": "Search questions...",
+    "categories": {
+      "all": "All Questions",
+      "courses": "Courses",
+      "enrollment": "Enrollment",
+      "payment": "Payment",
+      "schedule": "Schedule"
+    },
+    "stillNeedHelp": "Still have questions?",
+    "contactUs": "Contact our support team for personalized assistance"
+  },
+  "technologies": {
+    "title": "Technologies We Teach",
+    "subtitle": "Learn the most in-demand programming languages and tools"
+  },
+  "aboutPage": {
+    "title": "About Kodrum",
+    "subtitle": "Empowering learners of all ages with cutting-edge technology education since 2023",
+    "yearsExcellence": "15+ Years of Excellence",
+    "graduates": "2000+ Graduates",
+    "successRate": "95% Success Rate",
+    "foundation": {
+      "title": "Our Foundation",
+      "subtitle": "The principles that guide our educational mission and drive our success"
+    },
+    "mission": {
+      "title": "Our Mission",
+      "description": "To provide accessible, high-quality technology education that empowers individuals to thrive in the digital age, regardless of their age or background."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "description": "To be the leading educational institution in the Balkans, recognized for innovation in technology education and student success."
+    },
+    "values": {
+      "title": "Our Values",
+      "description": "Excellence, inclusivity, innovation, and integrity guide everything we do in our educational mission."
+    },
+    "coreValues": [
+      {
+        "title": "Excellence in Education",
+        "description": "We maintain the highest standards in curriculum design and instruction delivery."
+      },
+      {
+        "title": "Inclusive Learning",
+        "description": "Education for everyone, regardless of age, background, or previous experience."
+      },
+      {
+        "title": "Passion for Teaching",
+        "description": "Our instructors are passionate about sharing knowledge and inspiring students."
+      },
+      {
+        "title": "Industry Relevance",
+        "description": "Courses designed to meet current industry demands and future technology trends."
+      }
+    ],
+    "achievements": {
+      "title": "Our Achievements",
+      "subtitle": "Numbers that reflect our commitment to excellence and student success",
+      "studentsGraduated": "Students Graduated",
+      "jobPlacement": "Job Placement Rate",
+      "industryPartners": "Industry Partners",
+      "yearsOfExcellence": "Years of Excellence"
+    },
+    "team": {
+      "title": "Meet Our Expert Team",
+      "subtitle": "Our passionate educators and industry experts are dedicated to your success",
+      "coursesButton": "Courses This Mentor Teaches",
+      "contactInfo": "Contact Information",
+      "phone": "Phone",
+      "email": "Email",
+      "officeHours": "Office Hours",
+      "officeHoursTime": "Mon-Fri 2:00-6:00 PM",
+      "bookConsultation": "Book Consultation",
+      "sendMessage": "Send Message",
+      "about": "About",
+      "teachingStyle": "Teaching Style",
+      "achievements": "Achievements",
+      "coursesTaught": "Courses Taught",
+      "members": [
+        {
+          "name": "Hristijan Saveski",
+          "role": "Senior Cloud Engineer",
+          "specialization": "Cloud Computing & DevOps",
+          "experience": "5+ years",
+          "education": "Computer Engineering Graduate",
+          "image": "/mentors/hristijan.jpg",
+          "bio": "Senior Cloud Engineer with extensive experience in cloud architecture and DevOps practices. Specializes in teaching modern infrastructure and deployment strategies.",
+          "teachingStyle": "Hands-on labs with real cloud environments",
+          "achievements": [
+            "AWS Certified Solutions Architect",
+            "Kubernetes expert",
+            "Cloud migration specialist"
+          ],
+          "courses": [
+            {
+              "name": "Cloud Computing Basics",
+              "level": "Intermediate",
+              "duration": "6 weeks",
+              "nextStart": "Sep 12, 2024",
+              "price": "3,800 MKD"
+            },
+            {
+              "name": "DevOps & CI/CD",
+              "level": "Advanced",
+              "duration": "8 weeks",
+              "nextStart": "Oct 2, 2024",
+              "price": "4,500 MKD"
+            },
+            {
+              "name": "AWS Certification Prep",
+              "level": "Advanced",
+              "duration": "10 weeks",
+              "nextStart": "Oct 20, 2024",
+              "price": "5,500 MKD"
+            },
+            {
+              "name": "Docker & Kubernetes",
+              "level": "Advanced",
+              "duration": "7 weeks",
+              "nextStart": "Nov 8, 2024",
+              "price": "4,200 MKD"
+            },
+            {
+              "name": "Infrastructure as Code",
+              "level": "Advanced",
+              "duration": "6 weeks",
+              "nextStart": "Nov 25, 2024",
+              "price": "3,900 MKD"
+            },
+            {
+              "name": "Cloud Security",
+              "level": "Expert",
+              "duration": "8 weeks",
+              "nextStart": "Dec 10, 2024",
+              "price": "5,000 MKD"
+            }
+          ]
+        },
+        {
+          "name": "Stefan Saveski",
+          "role": "Competitive Programmer & Instructor",
+          "specialization": "Programming & Algorithms",
+          "experience": "6+ years",
+          "education": "Computer Science Student",
+          "image": "/mentors/stefan.jpg",
+          "bio": "Passionate competitive programmer with multiple awards in national and international programming contests. Specializes in teaching structured programming and algorithmic thinking.",
+          "teachingStyle": "Hands-on problem solving with real contest problems",
+          "achievements": [
+            "3x National Programming Champion",
+            "IOI Bronze Medal",
+            "ACM ICPC Regional Finalist"
+          ],
+          "courses": [
+            {
+              "name": "Structured Programming",
+              "level": "Beginner",
+              "duration": "4 weeks",
+              "nextStart": "Aug 21, 2024",
+              "price": "2,500 MKD"
+            },
+            {
+              "name": "Competitive Programming",
+              "level": "Advanced",
+              "duration": "8 weeks",
+              "nextStart": "Sep 15, 2024",
+              "price": "4,500 MKD"
+            },
+            {
+              "name": "C++ Fundamentals",
+              "level": "Intermediate",
+              "duration": "6 weeks",
+              "nextStart": "Oct 1, 2024",
+              "price": "3,200 MKD"
+            },
+            {
+              "name": "Problem Solving Techniques",
+              "level": "Intermediate",
+              "duration": "5 weeks",
+              "nextStart": "Oct 20, 2024",
+              "price": "2,800 MKD"
+            },
+            {
+              "name": "Advanced C++ Programming",
+              "level": "Advanced",
+              "duration": "7 weeks",
+              "nextStart": "Nov 5, 2024",
+              "price": "4,000 MKD"
+            },
+            {
+              "name": "Programming Contest Preparation",
+              "level": "Advanced",
+              "duration": "10 weeks",
+              "nextStart": "Nov 15, 2024",
+              "price": "5,500 MKD"
+            }
+          ]
+        },
+        {
+          "name": "Petar Hristovski",
+          "role": "Full Stack Developer",
+          "specialization": "Web Development",
+          "experience": "5+ years",
+          "education": "Software Engineering Graduate",
+          "image": "/mentors/petar.jpg",
+          "bio": "Full Stack Developer at EaseAccess24 with extensive experience in modern web technologies. Passionate about teaching practical web development skills.",
+          "teachingStyle": "Project-based learning with industry best practices",
+          "achievements": [
+            "Senior developer at EaseAccess24",
+            "Open source contributor",
+            "Tech conference speaker"
+          ],
+          "courses": [
+            {
+              "name": "Web Development Fundamentals",
+              "level": "Beginner",
+              "duration": "8 weeks",
+              "nextStart": "Sep 5, 2024",
+              "price": "3,500 MKD"
+            },
+            {
+              "name": "React & Node.js",
+              "level": "Intermediate",
+              "duration": "10 weeks",
+              "nextStart": "Sep 25, 2024",
+              "price": "4,800 MKD"
+            },
+            {
+              "name": "Full Stack Project",
+              "level": "Advanced",
+              "duration": "12 weeks",
+              "nextStart": "Oct 15, 2024",
+              "price": "6,000 MKD"
+            },
+            {
+              "name": "JavaScript Advanced Concepts",
+              "level": "Intermediate",
+              "duration": "6 weeks",
+              "nextStart": "Nov 5, 2024",
+              "price": "3,200 MKD"
+            },
+            {
+              "name": "Database Design & Management",
+              "level": "Intermediate",
+              "duration": "5 weeks",
+              "nextStart": "Nov 20, 2024",
+              "price": "2,800 MKD"
+            },
+            {
+              "name": "API Development & Integration",
+              "level": "Advanced",
+              "duration": "7 weeks",
+              "nextStart": "Dec 1, 2024",
+              "price": "4,200 MKD"
+            },
+            {
+              "name": "Mobile App Development",
+              "level": "Advanced",
+              "duration": "9 weeks",
+              "nextStart": "Dec 15, 2024",
+              "price": "5,200 MKD"
+            }
+          ]
+        },
+        {
+          "name": "Boris Gjorgjievski",
+          "role": "Competitive Programmer & Algorithm Expert",
+          "specialization": "Algorithms & Data Structures",
+          "experience": "6+ years",
+          "education": "Computer Science Graduate",
+          "image": "/mentors/boris.jpg",
+          "bio": "Expert in algorithms and data structures with extensive competitive programming background. Known for making complex algorithmic concepts accessible to students.",
+          "teachingStyle": "Visual explanations with step-by-step problem breakdowns",
+          "achievements": [
+            "Multiple ACM ICPC medals",
+            "Algorithm optimization specialist",
+            "Published research in algorithmic complexity"
+          ],
+          "courses": [
+            {
+              "name": "Algorithms and Data Structures",
+              "level": "Intermediate",
+              "duration": "4 weeks",
+              "nextStart": "Aug 29, 2024",
+              "price": "3,500 MKD"
+            },
+            {
+              "name": "Advanced Algorithms",
+              "level": "Advanced",
+              "duration": "6 weeks",
+              "nextStart": "Sep 20, 2024",
+              "price": "4,200 MKD"
+            },
+            {
+              "name": "Graph Theory",
+              "level": "Advanced",
+              "duration": "5 weeks",
+              "nextStart": "Oct 10, 2024",
+              "price": "3,800 MKD"
+            },
+            {
+              "name": "Dynamic Programming",
+              "level": "Advanced",
+              "duration": "4 weeks",
+              "nextStart": "Nov 1, 2024",
+              "price": "3,600 MKD"
+            },
+            {
+              "name": "Algorithm Optimization",
+              "level": "Expert",
+              "duration": "6 weeks",
+              "nextStart": "Nov 20, 2024",
+              "price": "4,800 MKD"
+            },
+            {
+              "name": "Competitive Programming Strategies",
+              "level": "Advanced",
+              "duration": "8 weeks",
+              "nextStart": "Dec 5, 2024",
+              "price": "5,200 MKD"
+            },
+            {
+              "name": "Machine Learning Algorithms",
+              "level": "Advanced",
+              "duration": "7 weeks",
+              "nextStart": "Dec 15, 2024",
+              "price": "4,500 MKD"
+            }
+          ]
+        },
+        {
+          "name": "Borjan Dimeski",
+          "role": "Mathematician & Programmer",
+          "specialization": "Mathematics & Programming",
+          "experience": "4+ years",
+          "education": "MSc Mathematics",
+          "image": "/mentors/borjan.jpg",
+          "bio": "Experienced mathematician with a passion for teaching calculus and discrete mathematics. Combines theoretical knowledge with practical programming applications.",
+          "teachingStyle": "Connecting mathematical theory with real-world programming applications",
+          "achievements": [
+            "Published mathematician",
+            "University lecturer",
+            "Math Olympiad coach"
+          ],
+          "courses": [
+            {
+              "name": "Calculus/Math 1",
+              "level": "Beginner",
+              "duration": "6 weeks",
+              "nextStart": "Aug 18, 2024",
+              "price": "2,200 MKD"
+            },
+            {
+              "name": "Discrete Mathematics",
+              "level": "Intermediate",
+              "duration": "8 weeks",
+              "nextStart": "Sep 10, 2024",
+              "price": "3,000 MKD"
+            },
+            {
+              "name": "Mathematical Analysis",
+              "level": "Advanced",
+              "duration": "10 weeks",
+              "nextStart": "Oct 5, 2024",
+              "price": "4,000 MKD"
+            },
+            {
+              "name": "Linear Algebra",
+              "level": "Intermediate",
+              "duration": "6 weeks",
+              "nextStart": "Oct 25, 2024",
+              "price": "2,800 MKD"
+            },
+            {
+              "name": "Statistics & Probability",
+              "level": "Intermediate",
+              "duration": "7 weeks",
+              "nextStart": "Nov 10, 2024",
+              "price": "3,200 MKD"
+            },
+            {
+              "name": "Mathematical Modeling",
+              "level": "Advanced",
+              "duration": "8 weeks",
+              "nextStart": "Nov 25, 2024",
+              "price": "3,800 MKD"
+            }
+          ]
+        }
+      ]
+    },
+    "story": {
+      "title": "Our Story",
+      "subtitle": "How we became Macedonia's leading tech education center",
+      "beginning": {
+        "year": "2025",
+        "title": "The Beginning",
+        "description": "Founded as a small programming school with weekend classes for university students, driven by a vision to make technology education accessible to everyone in Macedonia."
+      },
+      "expansion": {
+        "year": "2015",
+        "title": "Expansion",
+        "description": "Expanded curriculum to include mathematics, cybersecurity, and AI. Introduced specialized programs for children as young as 7 years old, making us a comprehensive educational institution."
+      },
+      "today": {
+        "year": "2024",
+        "title": "Today",
+        "description": "Recognized as one of the leading technology education institutions in the Balkans, serving 2,000+ students annually with graduates working at top companies worldwide."
+      },
+      "successPillars": {
+        "title": "Our Success Pillars",
+        "pillar1": {
+          "title": "Exceptional Instructors",
+          "description": "Real industry experience and passion for teaching"
+        },
+        "pillar2": {
+          "title": "Cutting-edge Curriculum",
+          "description": "Evolves with technology trends and industry needs"
+        },
+        "pillar3": {
+          "title": "Supportive Environment",
+          "description": "Encourages growth, innovation, and collaboration"
+        }
+      }
+    }
+  },
+  "promo": {
+    "hero": {
+      "badge": "Special Limited Time Offers",
+      "title": "Promo Packages",
+      "subtitle": "Unlock incredible savings with our specially designed course bundles and promotional offers"
+    },
+    "section": {
+      "title": "Choose Your Perfect Package",
+      "subtitle": "Save more when you learn more with our carefully crafted course combinations"
+    },
+    "coursesIncluded": "Courses Included:",
+    "whatsIncluded": "What's Included:",
+    "minimum": "Minimum:",
+    "choosePackage": "Choose This Package",
+    "why": {
+      "title": "Why Choose Our Packages?",
+      "betterValue": {
+        "title": "Better Value",
+        "description": "Save up to 30% compared to individual course pricing"
+      },
+      "learnTogether": {
+        "title": "Learn Together",
+        "description": "Special discounts for friends and families learning together"
+      },
+      "premiumSupport": {
+        "title": "Premium Support",
+        "description": "Enhanced mentorship and career guidance included"
+      }
+    }
+  },
+  "help": {
+    "title": "Help Center",
+    "subtitle": "Find answers to common questions and get support",
+    "callUs": "Call Us",
+    "emailUs": "Email Us",
+    "liveChat": "Live Chat",
+    "startChat": "Start Chat",
+    "hours": "Mon-Fri 9am-6pm",
+    "support247": "24/7 Support",
+    "faqTitle": "Frequently Asked Questions",
+    "stillNeedHelp": "Still Need Help?",
+    "contactDescription": "Send us a message and we'll respond within 24 hours",
+    "yourName": "Your Name",
+    "yourEmail": "Your Email",
+    "subject": "Subject",
+    "yourMessage": "Your Message",
+    "sendMessage": "Send Message",
+    "faqItems": [
+      {
+        "question": "How do I enroll in a course?",
+        "answer": "You can enroll by clicking the 'Enroll Now' button on any course page, or by contacting us directly through our contact form or phone."
+      },
+      {
+        "question": "What payment methods do you accept?",
+        "answer": "We accept bank transfers, cash payments, and installment plans. Contact us to discuss payment options that work best for you."
+      },
+      {
+        "question": "Can I get a refund if I'm not satisfied?",
+        "answer": "Yes, we offer a 7-day money-back guarantee if you're not satisfied with the course content or teaching quality."
+      },
+      {
+        "question": "Do you provide certificates upon completion?",
+        "answer": "Yes, all students receive a certificate of completion for successfully finished courses."
+      },
+      {
+        "question": "What if I miss a class?",
+        "answer": "We provide recorded sessions and makeup classes. You can also schedule one-on-one sessions to catch up on missed content."
+      },
+      {
+        "question": "Are there any prerequisites for advanced courses?",
+        "answer": "Yes, some advanced courses require foundational knowledge. Check the course details page for specific prerequisites."
+      }
+    ]
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "subtitle": "Terms and conditions for using our services",
+    "enrollment": {
+      "title": "Course Enrollment and Payment",
+      "items": [
+        "Course fees must be paid in full before the start date unless installment arrangements are made",
+        "Prices are listed in Macedonian Denars (MKD) and are subject to change",
+        "Registration is confirmed only after payment is received",
+        "Course materials and access are provided upon successful enrollment"
+      ]
+    },
+    "attendance": {
+      "title": "Attendance and Participation",
+      "items": [
+        "Regular attendance is expected for optimal learning outcomes",
+        "Students must notify instructors in advance of any absences",
+        "Makeup sessions may be available for missed classes",
+        "Disruptive behavior may result in removal from the course"
+      ]
+    },
+    "refund": {
+      "title": "Refund Policy",
+      "items": [
+        "Full refund available within 7 days of course start if not satisfied",
+        "50% refund available within the first 25% of course duration",
+        "No refunds after 25% of course completion",
+        "Refunds processed within 14 business days"
+      ]
+    },
+    "intellectual": {
+      "title": "Intellectual Property",
+      "items": [
+        "All course materials are proprietary to Kodrum",
+        "Students may not redistribute or share course content",
+        "Recording of classes requires explicit permission",
+        "Student work remains the property of the student"
+      ]
+    },
+    "liability": {
+      "title": "Limitation of Liability",
+      "items": [
+        "Kodrum is not liable for indirect or consequential damages",
+        "Our liability is limited to the amount paid for the course",
+        "We do not guarantee specific learning outcomes or job placement",
+        "Students are responsible for their own equipment and internet connection"
+      ]
+    },
+    "modifications": {
+      "title": "Modifications",
+      "content": "We reserve the right to modify these terms at any time. Changes will be communicated to enrolled students via email. Continued use of our services constitutes acceptance of modified terms."
+    },
+    "contactInfo": {
+      "title": "Contact Information",
+      "intro": "For questions about these terms, please contact us:",
+      "email": "Email",
+      "phone": "Phone",
+      "address": "Address",
+      "addressValue": "Skopje, North Macedonia"
+    }
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "subtitle": "How we collect, use, and protect your information",
+    "infoCollect": {
+      "title": "Information We Collect",
+      "intro": "We collect information you provide directly to us, such as when you create an account, enroll in courses, or contact us. This may include:",
+      "items": [
+        "Name, email address, and phone number",
+        "Payment information for course enrollment",
+        "Educational background and course preferences",
+        "Communications with our support team"
+      ]
+    },
+    "howWeUse": {
+      "title": "How We Use Your Information",
+      "intro": "We use the information we collect to:",
+      "items": [
+        "Provide and improve our educational services",
+        "Process payments and manage your account",
+        "Send you course updates and important notifications",
+        "Respond to your questions and provide customer support",
+        "Analyze usage patterns to enhance our platform"
+      ]
+    },
+    "sharing": {
+      "title": "Information Sharing",
+      "intro": "We do not sell, trade, or otherwise transfer your personal information to third parties without your consent, except as described in this policy. We may share information with:",
+      "items": [
+        "Service providers who assist in our operations",
+        "Legal authorities when required by law",
+        "Business partners for joint educational programs (with your consent)"
+      ]
+    },
+    "security": {
+      "title": "Data Security",
+      "intro": "We implement appropriate security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. This includes:",
+      "items": [
+        "Encryption of sensitive data",
+        "Regular security assessments",
+        "Limited access to personal information",
+        "Secure payment processing"
+      ]
+    },
+    "rights": {
+      "title": "Your Rights",
+      "intro": "You have the right to:",
+      "items": [
+        "Access and update your personal information",
+        "Request deletion of your data",
+        "Opt out of marketing communications",
+        "Request a copy of your data"
+      ],
+      "exercise": "To exercise these rights, please contact us at kodrum.mk@gmail.com"
+    },
+    "contactUs": {
+      "title": "Contact Us",
+      "intro": "If you have questions about this Privacy Policy, please contact us at:",
+      "email": "Email",
+      "phone": "Phone",
+      "address": "Address",
+      "addressValue": "Skopje, North Macedonia"
+    }
+  },
+  "calendar": {
+    "title": "Calendar for Events and Courses",
+    "months": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+    "days": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+    "prevMonth": "Previous month",
+    "nextMonth": "Next month",
+    "examDay": "EXAM DAY",
+    "regularClass": "Regular Class",
+    "course": "Course",
+    "day": "Day",
+    "mentor": "Mentor",
+    "date": "Date",
+    "time": "Time",
+    "events": "event",
+    "eventsPlural": "events"
   }
 }
