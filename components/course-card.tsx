@@ -129,7 +129,7 @@ export function CourseCard({ course }: CourseCardProps) {
         <div className="pt-4 flex flex-col sm:flex-row gap-2">
           <Link href="/contact" className="flex-1">
             <Button className="w-full bg-teal-500 hover:bg-teal-600 text-white rounded-lg transition-all duration-200 hover:shadow-lg">
-              Enroll Now
+              {t("nav.enrollNow")}
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </Link>
@@ -138,7 +138,7 @@ export function CourseCard({ course }: CourseCardProps) {
               variant="outline"
               className="w-full bg-transparent border-teal-200 text-teal-600 hover:bg-teal-50 rounded-lg transition-all duration-200"
             >
-              Learn More
+              {t("hero.learnMore")}
             </Button>
           </Link>
         </div>

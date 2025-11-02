@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import {
   Card,
@@ -14,6 +15,7 @@ import { Button } from "@/components/ui/button";
 import { Check, Users, Heart, Star, Gift, Percent } from "lucide-react";
 
 export default function PromoPage() {
+  const { t } = useTranslation();
   const [selectedPack, setSelectedPack] = useState(null);
 
   const promoPacks = [
@@ -158,14 +160,13 @@ export default function PromoPage() {
           <div className="text-center">
             <div className="inline-flex items-center px-4 py-2 bg-teal-100 text-teal-700 rounded-full text-sm font-medium mb-6">
               <Gift className="h-4 w-4 mr-2" />
-              Special Limited Time Offers
+              {t("promo.hero.badge")}
             </div>
             <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-teal-700 to-cyan-600 bg-clip-text text-transparent mb-6">
-              Promo Packages
+              {t("promo.hero.title")}
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
-              Unlock incredible savings with our specially designed course
-              bundles and promotional offers
+              {t("promo.hero.subtitle")}
             </p>
           </div>
         </div>
@@ -176,11 +177,10 @@ export default function PromoPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Choose Your Perfect Package
+              {t("promo.section.title")}
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Save more when you learn more with our carefully crafted course
-              combinations
+              {t("promo.section.subtitle")}
             </p>
           </div>
 
@@ -240,7 +240,7 @@ export default function PromoPage() {
                   {/* Courses Included */}
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-2">
-                      Courses Included:
+                      {t("promo.coursesIncluded")}
                     </h4>
                     <div className="space-y-1">
                       {pack.courses.map((course, idx) => (
@@ -258,7 +258,7 @@ export default function PromoPage() {
                   {/* Features */}
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-2">
-                      What's Included:
+                      {t("promo.whatsIncluded")}
                     </h4>
                     <div className="space-y-1">
                       {pack.features.map((feature, idx) => (
@@ -277,7 +277,7 @@ export default function PromoPage() {
                   {pack.minParticipants && (
                     <div className="bg-blue-50 p-3 rounded-lg">
                       <div className="text-sm text-blue-700 font-semibold">
-                        Minimum: {pack.minParticipants}
+                        {t("promo.minimum")} {pack.minParticipants}
                       </div>
                     </div>
                   )}
@@ -292,7 +292,7 @@ export default function PromoPage() {
 
                   {/* Enhanced CTA Button */}
                   <Button className="w-full bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-600 hover:to-cyan-600 text-white font-semibold py-4 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
-                    Choose This Package
+                    {t("promo.choosePackage")}
                   </Button>
                 </CardContent>
               </Card>
@@ -305,34 +305,34 @@ export default function PromoPage() {
       <section className="py-16 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-6">
-            Why Choose Our Packages?
+            {t("promo.why.title")}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="space-y-3">
               <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto">
                 <Percent className="h-6 w-6 text-green-600" />
               </div>
-              <h3 className="font-semibold text-gray-900">Better Value</h3>
+              <h3 className="font-semibold text-gray-900">{t("promo.why.betterValue.title")}</h3>
               <p className="text-gray-600 text-sm">
-                Save up to 30% compared to individual course pricing
+                {t("promo.why.betterValue.description")}
               </p>
             </div>
             <div className="space-y-3">
               <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto">
                 <Users className="h-6 w-6 text-blue-600" />
               </div>
-              <h3 className="font-semibold text-gray-900">Learn Together</h3>
+              <h3 className="font-semibold text-gray-900">{t("promo.why.learnTogether.title")}</h3>
               <p className="text-gray-600 text-sm">
-                Special discounts for friends and families learning together
+                {t("promo.why.learnTogether.description")}
               </p>
             </div>
             <div className="space-y-3">
               <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto">
                 <Star className="h-6 w-6 text-purple-600" />
               </div>
-              <h3 className="font-semibold text-gray-900">Premium Support</h3>
+              <h3 className="font-semibold text-gray-900">{t("promo.why.premiumSupport.title")}</h3>
               <p className="text-gray-600 text-sm">
-                Enhanced mentorship and career guidance included
+                {t("promo.why.premiumSupport.description")}
               </p>
             </div>
           </div>

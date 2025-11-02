@@ -27,11 +27,11 @@ export default function FAQPage() {
   const [selectedCategory, setSelectedCategory] = useState("all");
 
   const faqCategories = [
-    { id: "all", label: "All Questions", icon: HelpCircle },
-    { id: "courses", label: "Courses", icon: BookOpen },
-    { id: "enrollment", label: "Enrollment", icon: Users },
-    { id: "payment", label: "Payment", icon: CreditCard },
-    { id: "schedule", label: "Schedule", icon: Calendar },
+    { id: "all", label: t("faq.categories.all"), icon: HelpCircle },
+    { id: "courses", label: t("faq.categories.courses"), icon: BookOpen },
+    { id: "enrollment", label: t("faq.categories.enrollment"), icon: Users },
+    { id: "payment", label: t("faq.categories.payment"), icon: CreditCard },
+    { id: "schedule", label: t("faq.categories.schedule"), icon: Calendar },
   ];
 
   const faqs = [
@@ -160,7 +160,7 @@ export default function FAQPage() {
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
               <Input
                 type="text"
-                placeholder="Search questions..."
+                placeholder={t("faq.searchPlaceholder")}
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="pl-10"
@@ -263,7 +263,7 @@ export default function FAQPage() {
               <div className="bg-gradient-to-r from-teal-50 to-cyan-50 rounded-xl p-6">
                 <div className="text-teal-700 font-medium">
                   <p className="mb-2">
-                    📧 support@kodrum.mk | 📞 +389 2 123 4567
+                    📧 kodrum.mk@gmail.com | 📞 +389 75 295{" "}582
                   </p>
                   <p>⚡ Response time: Within 24 hours</p>
                 </div>
