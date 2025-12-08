@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslation } from "react-i18next";
+import { useState } from "react";
 import {
   Card,
   CardContent,
@@ -10,58 +11,239 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Calculator, Code, Database } from "lucide-react";
+import { Calculator, Code, Database, BookOpen, Cpu, Zap, Github } from "lucide-react";
 import Link from "next/link";
+
+type Faculty = "ALL" | "ФИНКИ" | "МФС" | "ФЕИТ";
 
 export function FeaturedCourses() {
   const { t } = useTranslation();
+  const [selectedFaculty, setSelectedFaculty] = useState<Faculty>("ALL");
 
   const activeCourses = [
+    // Git & GitHub Workshop
+    {
+      id: "git-github-fundamentals",
+      icon: Github,
+      title: t("courses.active-courses-items.items.git-github.title"),
+      description: t("courses.active-courses-items.items.git-github.description"),
+      instructor: "Христијан Савески",
+      startDate: "27 Декември 2025",
+      duration: "3 часа",
+      level: t("levels.beginner"),
+      price: t("courses.active-courses-items.items.git-github.price"),
+      color: "bg-yellow-300 text-yellow-900",
+      borderColor: "border-yellow-200",
+      link: "https://forms.gle/FQQ935TE3poxeKzE8",
+      status: t("courses.status.enrolling"),
+      faculty: "ФИНКИ" as Faculty,
+    },
+    // ФИНКИ - Христијан
+    {
+      id: "data-science-intro",
+      icon: Database,
+      title: t("courses.active-courses-items.items.data-science-intro.title"),
+      description: t("courses.active-courses-items.items.data-science-intro.description"),
+      instructor: "Христијан Савески",
+      startDate: t("courses.active-courses-items.items.data-science-intro.startDate"),
+      duration: t("courses.active-courses-items.items.data-science-intro.duration"),
+      level: t("levels.beginner"),
+      price: t("courses.active-courses-items.items.data-science-intro.price"),
+      color: "bg-cyan-100 text-cyan-700",
+      link: "#",
+      status: t("courses.status.enrolling"),
+      faculty: "ФИНКИ" as Faculty,
+    },
+    {
+      id: "databases",
+      icon: Database,
+      title: t("courses.active-courses-items.items.databases.title"),
+      description: t("courses.active-courses-items.items.databases.description"),
+      instructor: "Христијан Савески",
+      startDate: t("courses.active-courses-items.items.databases.startDate"),
+      duration: t("courses.active-courses-items.items.databases.duration"),
+      level: t("levels.beginner"),
+      price: t("courses.active-courses-items.items.databases.price"),
+      color: "bg-cyan-100 text-cyan-700",
+      link: "#",
+      status: t("courses.status.enrolling"),
+      faculty: "ФИНКИ" as Faculty,
+    },
+    // ФИНКИ - Стефан, Борис
     {
       id: "algorithms-data-structures",
-      icon: Database,
-      title: t("courses.programming.algorithms"),
-      description: t("courses.active-courses-items.items.algorithms.description"),
-      instructor: "Boris Gj. and Stefan S.",
-      startDate: "November 7, 2025",
-      duration: "4 days",
-      level: t("levels.intermediate"),
-      price: "2500 MKD",
-      color: "bg-cyan-100 text-cyan-700",
-      link:"https://forms.gle/wMtLd65ZtaX9YoE2A",
+      icon: Code,
+      title: t("courses.active-courses-items.items.algorithms-data-structures.title"),
+      description: t("courses.active-courses-items.items.algorithms-data-structures.description"),
+      instructor: "Стефан Савески, Борис Ѓ.",
+      startDate: t("courses.active-courses-items.items.algorithms-data-structures.startDate"),
+      duration: t("courses.active-courses-items.items.algorithms-data-structures.duration"),
+      level: t("levels.beginner"),
+      price: t("courses.active-courses-items.items.algorithms-data-structures.price"),
+      color: "bg-teal-100 text-teal-700",
+      link: "#",
       status: t("courses.status.enrolling"),
+      faculty: "ФИНКИ" as Faculty,
     },
+    {
+      id: "web-programming",
+      icon: Code,
+      title: t("courses.active-courses-items.items.web-programming.title"),
+      description: t("courses.active-courses-items.items.web-programming.description"),
+      instructor: "Стефан Савески, Борис Ѓ.",
+      startDate: t("courses.active-courses-items.items.web-programming.startDate"),
+      duration: t("courses.active-courses-items.items.web-programming.duration"),
+      level: t("levels.beginner"),
+      price: t("courses.active-courses-items.items.web-programming.price"),
+      color: "bg-teal-100 text-teal-700",
+      link: "#",
+      status: t("courses.status.enrolling"),
+      faculty: "ФИНКИ" as Faculty,
+    },
+    {
+      id: "advanced-programming",
+      icon: Code,
+      title: t("courses.active-courses-items.items.advanced-programming.title"),
+      description: t("courses.active-courses-items.items.advanced-programming.description"),
+      instructor: "Стефан Савески, Борис Ѓ.",
+      startDate: t("courses.active-courses-items.items.advanced-programming.startDate"),
+      duration: t("courses.active-courses-items.items.advanced-programming.duration"),
+      level: t("levels.beginner"),
+      price: t("courses.active-courses-items.items.advanced-programming.price"),
+      color: "bg-teal-100 text-teal-700",
+      link: "#",
+      status: t("courses.status.enrolling"),
+      faculty: "ФИНКИ" as Faculty,
+    },
+    {
+      id: "oop",
+      icon: Code,
+      title: t("courses.active-courses-items.items.oop.title"),
+      description: t("courses.active-courses-items.items.oop.description"),
+      instructor: "Стефан Савески, Борис Ѓ.",
+      startDate: t("courses.active-courses-items.items.oop.startDate"),
+      duration: t("courses.active-courses-items.items.oop.duration"),
+      level: t("levels.beginner"),
+      price: t("courses.active-courses-items.items.oop.price"),
+      color: "bg-teal-100 text-teal-700",
+      link: "#",
+      status: t("courses.status.enrolling"),
+      faculty: "ФИНКИ" as Faculty,
+    },
+    // ФИНКИ - Петар
     {
       id: "structured-programming",
       icon: Code,
-      title: t("courses.programming.structuredProgramming"),
-  description: t("courses.active-courses-items.items.structuredProgramming.description"),
-      instructor: "Boris Gj. and Stefan S.",
-      startDate: "November 7, 2025",
-      duration: "4 days",
+      title: t("courses.active-courses-items.items.structured-programming.title"),
+      description: t("courses.active-courses-items.items.structured-programming.description"),
+      instructor: "Петар Христовски",
+      startDate: t("courses.active-courses-items.items.structured-programming.startDate"),
+      duration: t("courses.active-courses-items.items.structured-programming.duration"),
       level: t("levels.beginner"),
-      price: "2,500 MKD",
-      color: "bg-teal-600 text-white",
+      price: t("courses.active-courses-items.items.structured-programming.price"),
+      color: "bg-teal-100 text-cyan-700",
+      link: "#",
       status: t("courses.status.enrolling"),
-      link:"https://forms.gle/KYX3fhruYqFJWS9z5",
-
+      faculty: "ФИНКИ" as Faculty,
+    },
+    // ФИНКИ - Борјан
+    {
+      id: "math1-calculus",
+      icon: Calculator,
+      title: t("courses.active-courses-items.items.math1-calculus.title"),
+      description: t("courses.active-courses-items.items.math1-calculus.description"),
+      instructor: "Борјан Димески",
+      startDate: t("courses.active-courses-items.items.math1-calculus.startDate"),
+      duration: t("courses.active-courses-items.items.math1-calculus.duration"),
+      level: t("levels.beginner"),
+      price: t("courses.active-courses-items.items.math1-calculus.price"),
+      color: "bg-purple-100 text-purple-700",
+      link: "#",
+      status: t("courses.status.enrolling"),
+      faculty: "ФИНКИ" as Faculty,
     },
     {
-      id: "calculus",
+      id: "math2-discrete",
       icon: Calculator,
-      title: t("courses.math.calculus1"),
-  description: t("courses.active-courses-items.items.calculus.description"),
-      instructor: "Borjan Dimeski",
-      startDate: "November 1, 2024",
-      duration: "3 days",
+      title: t("courses.active-courses-items.items.math2-discrete.title"),
+      description: t("courses.active-courses-items.items.math2-discrete.description"),
+      instructor: "Борјан Димески",
+      startDate: t("courses.active-courses-items.items.math2-discrete.startDate"),
+      duration: t("courses.active-courses-items.items.math2-discrete.duration"),
       level: t("levels.beginner"),
-      price: "2500 MKD",
-      color: "bg-teal-100 text-teal-700",
+      price: t("courses.active-courses-items.items.math2-discrete.price"),
+      color: "bg-purple-100 text-purple-700",
+      link: "#",
       status: t("courses.status.enrolling"),
-      link:"https://forms.gle/qhYi1zcCxvX78hYb7",
-
+      faculty: "ФИНКИ" as Faculty,
+    },
+    // ФЕИТ - Јован Петровски
+    {
+      id: "electrical-fundamentals",
+      icon: Zap,
+      title: t("courses.active-courses-items.items.electrical-fundamentals.title"),
+      description: t("courses.active-courses-items.items.electrical-fundamentals.description"),
+      instructor: "Јован Петровски",
+      startDate: t("courses.active-courses-items.items.electrical-fundamentals.startDate"),
+      duration: t("courses.active-courses-items.items.electrical-fundamentals.duration"),
+      level: t("levels.beginner"),
+      price: t("courses.active-courses-items.items.electrical-fundamentals.price"),
+      color: "bg-yellow-100 text-yellow-700",
+      link: "#",
+      status: t("courses.status.enrolling"),
+      faculty: "ФЕИТ" as Faculty,
+    },
+    {
+      id: "feit-math1",
+      icon: Calculator,
+      title: t("courses.active-courses-items.items.feit-math1.title"),
+      description: t("courses.active-courses-items.items.feit-math1.description"),
+      instructor: "Јован Петровски",
+      startDate: t("courses.active-courses-items.items.feit-math1.startDate"),
+      duration: t("courses.active-courses-items.items.feit-math1.duration"),
+      level: t("levels.beginner"),
+      price: t("courses.active-courses-items.items.feit-math1.price"),
+      color: "bg-yellow-100 text-yellow-700",
+      link: "#",
+      status: t("courses.status.enrolling"),
+      faculty: "ФЕИТ" as Faculty,
+    },
+    // МФСС - Никола Коцевски
+    {
+      id: "mechanics",
+      icon: Cpu,
+      title: t("courses.active-courses-items.items.mechanics.title"),
+      description: t("courses.active-courses-items.items.mechanics.description"),
+      instructor: "Никола Коцевски",
+      startDate: t("courses.active-courses-items.items.mechanics.startDate"),
+      duration: t("courses.active-courses-items.items.mechanics.duration"),
+      level: t("levels.beginner"),
+      price: t("courses.active-courses-items.items.mechanics.price"),
+      color: "bg-blue-100 text-blue-700",
+      link: "#",
+      status: t("courses.status.enrolling"),
+      faculty: "МФС" as Faculty,
+    },
+    {
+      id: "engineering-graphics",
+      icon: BookOpen,
+      title: t("courses.active-courses-items.items.engineering-graphics.title"),
+      description: t("courses.active-courses-items.items.engineering-graphics.description"),
+      instructor: "Никола Коцевski",
+      startDate: t("courses.active-courses-items.items.engineering-graphics.startDate"),
+      duration: t("courses.active-courses-items.items.engineering-graphics.duration"),
+      level: t("levels.beginner"),
+      price: t("courses.active-courses-items.items.engineering-graphics.price"),
+      color: "bg-blue-100 text-blue-700",
+      link: "#",
+      status: t("courses.status.enrolling"),
+      faculty: "МФС" as Faculty,
     },
   ];
+
+  const filteredCourses = selectedFaculty === "ALL"
+    ? activeCourses
+    : activeCourses.filter(course => course.faculty === selectedFaculty);
 
   return (
     <section className="py-20 bg-white" id="pripremi">
@@ -75,20 +257,75 @@ export function FeaturedCourses() {
           </p>
         </div>
 
+        {/* Faculty Filter Buttons */}
+        <div className="flex flex-wrap justify-center gap-4 mb-12">
+          <Button
+            onClick={() => setSelectedFaculty("ALL")}
+            variant={selectedFaculty === "ALL" ? "default" : "outline"}
+            className={selectedFaculty === "ALL"
+              ? "bg-teal-600 hover:bg-teal-700 text-white"
+              : "border-teal-600 text-teal-600 hover:bg-teal-50"}
+          >
+            {t("courses.filters.all")}
+          </Button>
+          <Button
+            onClick={() => setSelectedFaculty("ФИНКИ")}
+            variant={selectedFaculty === "ФИНКИ" ? "default" : "outline"}
+            className={selectedFaculty === "ФИНКИ"
+              ? "bg-teal-600 hover:bg-teal-700 text-white"
+              : "border-teal-600 text-teal-600 hover:bg-teal-50"}
+          >
+            ФИНКИ
+          </Button>
+          <Button
+            onClick={() => setSelectedFaculty("МФС")}
+            variant={selectedFaculty === "МФС" ? "default" : "outline"}
+            className={selectedFaculty === "МФС"
+              ? "bg-teal-600 hover:bg-teal-700 text-white"
+              : "border-teal-600 text-teal-600 hover:bg-teal-50"}
+          >
+            МФС
+          </Button>
+          <Button
+            onClick={() => setSelectedFaculty("ФЕИТ")}
+            variant={selectedFaculty === "ФЕИТ" ? "default" : "outline"}
+            className={selectedFaculty === "ФЕИТ"
+              ? "bg-teal-600 hover:bg-teal-700 text-white"
+              : "border-teal-600 text-teal-600 hover:bg-teal-50"}
+          >
+            ФЕИТ
+          </Button>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {activeCourses.map((course) => {
+          {filteredCourses.map((course) => {
             const IconComponent = course.icon;
             return (
               <Card
                 key={course.id}
-                className="hover:shadow-xl transition-all duration-300 border-2 hover:border-teal-200 hover:-translate-y-1 flex flex-col justify-between"
+                className={`hover:shadow-xl transition-shadow duration-300 border-2 ${
+                  course.borderColor || "border-gray-200 hover:border-teal-200"
+                } flex flex-col justify-between relative group`}
               >
+
                 <CardHeader>
-                  <div
-                    className={`w-14 h-14 rounded-xl ${course.color} flex items-center justify-center mb-4`}
-                  >
-                    <IconComponent className="h-7 w-7" />
+                  <div className="flex justify-between mb-4">
+                    <div
+                      className={`w-14 h-14 rounded-xl ${course.color} flex items-center justify-center`}
+                    >
+                      <IconComponent className="h-7 w-7" />
+                    </div>
+                    <div className="flex items-center">
+                      <Badge
+                        variant="outline"
+                        className="h-6 bg-white border-teal-600 text-teal-600 font-semibold z-10 flex justify-center "
+                      >
+                        {course.faculty}
+                      </Badge>
+                    </div>
+
                   </div>
+
                   <div className="flex items-center justify-between mb-2">
                     <Badge
                       variant="secondary"

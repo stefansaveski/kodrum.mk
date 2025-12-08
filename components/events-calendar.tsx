@@ -11,6 +11,7 @@ import {
   Award,
   ChevronLeft,
   ChevronRight,
+  MousePointerClick,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -66,6 +67,26 @@ export default function EventsCalendar() {
   const firstDay = getFirstDayOfMonth(currentDate);
 
   const events: CalendarEvent[] = [
+    // January 23 - February 15, 2026: Предвидени Припреми
+    ...Array.from({ length: 24 }, (_, i) => {
+      const day = 23 + i;
+      const isJanuary = day <= 31;
+      const actualDay = isJanuary ? day : day - 31;
+      const month = isJanuary ? 1 : 2;
+      
+      return {
+        id: `prep-${i + 1}`,
+        date: `2026-${String(month).padStart(2, "0")}-${String(actualDay).padStart(2, "0")}`,
+        title: "Предвидени Припреми",
+        course: "Предвидени Припреми",
+        day: i + 1,
+        mentor: "ФИНКИ, МФ, ФЕИТ",
+        time: "TBD",
+        type: "regular" as const,
+        level: t("upcoming.beginner"),
+        description: "Припреми за студенти на ФИНКИ, Машински Факултет и ФЕИТ.",
+      };
+    }),
     // Calculus lectures - Nov 1, 2, 8
     {
       id: "1",
@@ -265,7 +286,7 @@ export default function EventsCalendar() {
           className="text-xl sm:text-2xl font-bold text-gray-900 flex items-center gap-2"
         >
           <Calendar
-            className="h-5 w-5 sm:h-6 sm:w-6 text-green-600"
+            className="h-5 w-5 sm:h-6 sm:w-6 text-teal-700"
             aria-hidden="true"
           />
           {t("upcoming.calendar")}
@@ -342,14 +363,11 @@ export default function EventsCalendar() {
           const day = i + 1;
           const dayEvents = getEventsForDate(day);
           const hasEvents = dayEvents.length > 0;
-          const heightClass = dayEvents.length > 1 
-            ? "h-24 sm:h-32" 
-            : "h-16 sm:h-24";
 
           return (
             <div
               key={day}
-              className={`${heightClass} border border-gray-200 p-1 relative hover:bg-gray-50 focus-within:ring-2 focus-within:ring-green-500 focus-within:ring-offset-1`}
+              className="h-20 sm:h-24 border border-gray-200 p-1 relative hover:bg-gray-50 focus-within:ring-2 focus-within:ring-teal-700 focus-within:ring-offset-1"
               role="gridcell"
               aria-label={`${day} ${
                 monthNames[currentDate.getMonth()]
@@ -363,7 +381,7 @@ export default function EventsCalendar() {
             >
               <button
                 data-day={day}
-                className="w-full h-full text-left focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-1 rounded"
+                className="w-full h-full text-left focus:outline-none focus:ring-2 focus:ring-teal-700 focus:ring-offset-1 rounded cursor-pointer"
                 onClick={() => hasEvents && setSelectedEvent(dayEvents[0])}
                 onKeyDown={(e) => handleKeyDown(e, day)}
                 disabled={!hasEvents}
@@ -373,23 +391,32 @@ export default function EventsCalendar() {
                   {day}
                 </div>
                 <div className="space-y-1" id={`events-${day}`}>
-                  {dayEvents.map((event, index) => (
+                  {dayEvents.slice(0, 1).map((event, index) => (
                     <div
                       key={event.id}
-                      className={`w-full text-xs p-1 rounded text-white truncate ${
-                        event.type === "exam" ? "bg-yellow-600" : "bg-green-600"
+                      className={`w-full text-xs p-1 rounded text-white truncate flex items-center gap-1 ${
+                        event.type === "exam" ? "bg-yellow-600" : "bg-teal-700"
                       }`}
                       title={event.title}
                       aria-label={`${event.title}, ${event.time}`}
                     >
-                      <span className="hidden sm:inline">
+                      <MousePointerClick className="h-3 w-3 flex-shrink-0" aria-hidden="true" />
+                      <span className="hidden sm:inline truncate">
                         {event.course.split(" ")[0]}
                       </span>
-                      <span className="sm:hidden">
+                      <span className="sm:hidden truncate">
                         {event.course.slice(0, 3)}
                       </span>
                     </div>
                   ))}
+                  {dayEvents.length > 1 && (
+                    <div
+                      className="w-full text-xs p-1 rounded bg-transparent text-gray-700 font-semibold text-center"
+                      title={`${dayEvents.length - 1} more event${dayEvents.length - 1 > 1 ? 's' : ''}`}
+                    >
+                      +{dayEvents.length - 1}
+                    </div>
+                  )}
                 </div>
               </button>
             </div>
@@ -402,7 +429,7 @@ export default function EventsCalendar() {
         onOpenChange={() => setSelectedEvent(null)}
       >
         <DialogContent
-          className="max-w-sm sm:max-w-md mx-4"
+          className="max-w-sm sm:max-w-md w-[calc(100vw-2rem)] mx-auto"
           aria-describedby="event-description"
         >
           <DialogHeader>
@@ -437,6 +464,7 @@ export default function EventsCalendar() {
                         }
                         disabled={currentIndex === 0}
                         aria-label="Previous event"
+                        className="border-yellow-400 text-yellow-600 hover:bg-yellow-50"
                       >
                         <ChevronLeft className="h-4 w-4" />
                       </Button>
@@ -451,6 +479,7 @@ export default function EventsCalendar() {
                         }
                         disabled={currentIndex === dayEvents.length - 1}
                         aria-label="Next event"
+                        className="border-yellow-400 text-yellow-600 hover:bg-yellow-50"
                       >
                         <ChevronRight className="h-4 w-4" />
                       </Button>
@@ -463,7 +492,7 @@ export default function EventsCalendar() {
                         className={
                           selectedEvent.type === "exam"
                             ? "bg-red-600 text-white hover:bg-red-700"
-                            : "bg-green-600 text-white hover:bg-green-700"
+                            : "bg-teal-700 text-white hover:bg-teal-800"
                         }
                       >
                         {selectedEvent.type === "exam"

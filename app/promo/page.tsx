@@ -24,9 +24,9 @@ export default function PromoPage() {
       title: t("promo.packs.combo.title"),
       description: t("promo.packs.combo.description"),
       courses: t("promo.packs.combo.courses", { returnObjects: true }) as string[],
-      originalPrice: "5,000 MKD",
-      discountPrice: "4,000 MKD",
-      savings: "1,000 MKD",
+      originalPrice: "7/8,000 MKD",
+      discountPrice: "-20 %",
+      savings: "2,000 MKD",
       discount: "20%",
       icon: <Star className="h-8 w-8" />,
       color: "from-blue-500 to-blue-600",
@@ -39,9 +39,9 @@ export default function PromoPage() {
       title: t("promo.packs.mathProgramming.title"),
       description: t("promo.packs.mathProgramming.description"),
       courses: t("promo.packs.mathProgramming.courses", { returnObjects: true }) as string[],
-      originalPrice: "5,000 MKD",
-      discountPrice: "4,000 MKD",
-      savings: "1,000 MKD",
+      originalPrice: "7/8,000 MKD",
+      discountPrice: "-20 %",
+      savings: "2,000 MKD",
       discount: "20%",
       icon: <Gift className="h-8 w-8" />,
       color: "from-green-500 to-green-600",
@@ -274,7 +274,7 @@ export default function PromoPage() {
                   </div>
 
                   {/* Enhanced CTA Button - pushed to bottom */}
-                  <Button className="w-full bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-600 hover:to-cyan-600 text-white font-semibold py-4 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 mt-auto">
+                  <Button className="w-full bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-600 hover:to-cyan-600 text-white font-semibold py-4 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 mt-auto" onClick={() => window.location.href = "/#pripremi"}>
                     {t("promo.choosePackage")}
                   </Button>
                 </CardContent>

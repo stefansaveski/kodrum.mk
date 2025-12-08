@@ -31,8 +31,8 @@ export function Navigation() {
           {/* Logo */}
           <div className="flex justify-start">
             <Link href="/" className="flex items-center space-x-2">
-              <img src="/logos/kodrum.png" alt="Kodrum" className="h-8 w-8" />
-              <span className="font-bold text-xl text-teal-600">Kodrum</span>
+              <img src="/logos/kodrum.png" alt="Kodrum" className="h-8" />
+              {/* <span className="font-bold text-xl text-teal-600">Kodrum</span> */}
             </Link>
           </div>
 
@@ -53,7 +53,7 @@ export function Navigation() {
           <div className="hidden md:flex items-center justify-end space-x-4">
             <LanguageSwitcher />
             <Link href="/#pripremi">
-              <Button className="bg-teal-500 hover:bg-teal-600 text-white font-semibold">
+              <Button className="bg-teal-700 hover:bg-teal-600 text-white font-semibold">
                 {t("nav.enrollNow")}
               </Button>
             </Link>
@@ -90,7 +90,7 @@ export function Navigation() {
                 </Link>
               ))}
               <Link href="/courses">
-                <Button className="bg-teal-500 hover:bg-teal-600 text-white font-semibold w-full mt-4">
+                <Button className="bg-teal-700 hover:bg-teal-600 text-white font-semibold w-full mt-4">
                   {t("nav.enrollNow")}
                 </Button>
               </Link>

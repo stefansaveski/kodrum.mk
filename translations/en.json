@@ -91,8 +91,8 @@
   "courses": {
     "title": "Our Courses",
     "subtitle": "Comprehensive learning paths for every age group and skill level",
-    "active-courses": "Active Courses",
-    "active-courses-description": "Join our currently running courses and start your learning journey today",
+    "active-courses": "Active Exam Preparations",
+    "active-courses-description": "Join our currently running preparations and prepare for success on your exams.",
     "enlist": "Apply Now",
     "categories": {
       "kids": "Kids (7-12)",
@@ -129,20 +129,107 @@
     ,
     "active-courses-items": {
       "items": {
-        "algorithms": {
-          "description": "Master essential algorithms and data structures for competitive programming and interviews"
+        "git-github": {
+          "title": "Git & GitHub Fundamentals Workshop",
+          "description": "Learn version control with Git and collaborate on GitHub. Master branching, merging, pull requests, and best practices for team development.",
+          "price": "FREE"
         },
-        "structuredProgramming": {
-          "description": "Learn structured programming fundamentals with C++ and build a solid foundation for software development"
+        "data-science-intro": {
+          "title": "Introduction to Data Science",
+          "description": "Master the fundamentals of data science and data analysis.",
+          "startDate": "January/February 2026",
+          "duration": "3-5 days",
+          "price": "3,000-4,000 MKD"
         },
-        "objectOriented": {
-          "description": "Learn object-oriented programming fundamentals with C++ and build a solid foundation for software development"
+        "databases": {
+          "title": "Databases",
+          "description": "Learn database design, implementation and management.",
+          "startDate": "January/February 2026",
+          "duration": "3-5 days",
+          "price": "3,000-4,000 MKD"
         },
-        "calculus": {
-          "description": "Master fundamental calculus concepts with practical applications and problem-solving techniques"
+        "algorithms-data-structures": {
+          "title": "Algorithms and Data Structures",
+          "description": "Dive deep into algorithms and data structures for efficient programming.",
+          "startDate": "January/February 2026",
+          "duration": "3-5 days",
+          "price": "3,000-4,000 MKD"
+        },
+        "web-programming": {
+          "title": "Web Programming",
+          "description": "Build modern web applications with the latest technologies.",
+          "startDate": "January/February 2026",
+          "duration": "3-5 days",
+          "price": "3,000-4,000 MKD"
+        },
+        "advanced-programming": {
+          "title": "Advanced Programming",
+          "description": "Advanced concepts and techniques for professional programming.",
+          "startDate": "January/February 2026",
+          "duration": "3-5 days",
+          "price": "3,000-4,000 MKD"
+        },
+        "oop": {
+          "title": "Object-Oriented Programming",
+          "description": "Master the principles of object-oriented programming.",
+          "startDate": "January/February 2026",
+          "duration": "3-5 days",
+          "price": "3,000-4,000 MKD"
+        },
+        "structured-programming": {
+          "title": "Structured Programming",
+          "description": "Programming fundamentals with a structured approach.",
+          "startDate": "January/February 2026",
+          "duration": "3-5 days",
+          "price": "3,000-4,000 MKD"
+        },
+        "math1-calculus": {
+          "title": "Mathematics 1 / Calculus",
+          "description": "Fundamentals of mathematical analysis and calculus for students.",
+          "startDate": "January/February 2026",
+          "duration": "3-5 days",
+          "price": "3,000-4,000 MKD"
+        },
+        "math2-discrete": {
+          "title": "Mathematics 2 / Discrete Mathematics",
+          "description": "Discrete mathematics, logic and mathematical structures.",
+          "startDate": "January/February 2026",
+          "duration": "3-5 days",
+          "price": "3,000-4,000 MKD"
+        },
+        "electrical-fundamentals": {
+          "title": "Electrical Engineering Fundamentals",
+          "description": "Fundamental concepts of electrical engineering and electrical circuits.",
+          "startDate": "January/February 2026",
+          "duration": "3-5 days",
+          "price": "3,000-4,000 MKD"
+        },
+        "feit-math1": {
+          "title": "Mathematics 1",
+          "description": "Mathematical analysis for FEIT students.",
+          "startDate": "January/February 2026",
+          "duration": "3-5 days",
+          "price": "3,000-4,000 MKD"
+        },
+        "mechanics": {
+          "title": "Mechanics",
+          "description": "Classical mechanics and physical laws of motion.",
+          "startDate": "January/February 2026",
+          "duration": "3-5 days",
+          "price": "3,000-4,000 MKD"
+        },
+        "engineering-graphics": {
+          "title": "Engineering Graphics",
+          "description": "Technical drawing and engineering visualization.",
+          "startDate": "January/February 2026",
+          "duration": "3-5 days",
+          "price": "3,000-4,000 MKD"
         }
       },
       "description": "Join our currently running courses and start your learning journey today"
+    },
+    "filters": {
+      "all": "All Preparations"
     },
     "status": {
       "enrolling": "Enrolling Now"
@@ -285,7 +372,7 @@
   },
   "aboutPage": {
     "title": "About Kodrum",
-    "subtitle": "Empowering learners of all ages with cutting-edge technology education since 2023",
+    "subtitle": "Empowering learners of all ages with cutting-edge technology education.",
     "yearsExcellence": "70+ Passed Students",
     "graduates": "15+ Preparations",
     "successRate": "80% Success Rate",
@@ -351,8 +438,8 @@
           "name": "Hristijan Saveski",
           "role": "Senior Cloud Engineer",
           "specialization": "Cloud Computing & DevOps",
-          "experience": "5+ years",
-          "education": "Computer Engineering Graduate",
+          "experience": "3+ years",
+          "education": "Software Engineering Graduate",
           "image": "/mentors/hristijan.jpg",
           "bio": "Senior Cloud Engineer with extensive experience in cloud architecture and DevOps practices. Specializes in teaching modern infrastructure and deployment strategies.",
           "teachingStyle": "Hands-on labs with real cloud environments",
@@ -410,7 +497,7 @@
           "name": "Stefan Saveski",
           "role": "Competitive Programmer & Instructor",
           "specialization": "Programming & Algorithms",
-          "experience": "6+ years",
+          "experience": "3+ years",
           "education": "Computer Science Student",
           "image": "/mentors/stefan.jpg",
           "bio": "Passionate competitive programmer with multiple awards in national and international programming contests. Specializes in teaching structured programming and algorithmic thinking.",
@@ -469,8 +556,8 @@
           "name": "Petar Hristovski",
           "role": "Full Stack Developer",
           "specialization": "Web Development",
-          "experience": "5+ years",
-          "education": "Software Engineering Graduate",
+          "experience": "4+ years",
+          "education": "Software Engineer",
           "image": "/mentors/petar.jpg",
           "bio": "Full Stack Developer at EaseAccess24 with extensive experience in modern web technologies. Passionate about teaching practical web development skills.",
           "teachingStyle": "Project-based learning with industry best practices",
@@ -535,8 +622,8 @@
           "name": "Boris Gjorgjievski",
           "role": "Competitive Programmer & Algorithm Expert",
           "specialization": "Algorithms & Data Structures",
-          "experience": "6+ years",
-          "education": "Computer Science Graduate",
+          "experience": "3+ years",
+          "education": "Computer Science Student",
           "image": "/mentors/boris.jpg",
           "bio": "Expert in algorithms and data structures with extensive competitive programming background. Known for making complex algorithmic concepts accessible to students.",
           "teachingStyle": "Visual explanations with step-by-step problem breakdowns",
@@ -602,7 +689,7 @@
           "role": "Mathematician & Programmer",
           "specialization": "Mathematics & Programming",
           "experience": "4+ years",
-          "education": "MSc Mathematics",
+          "education": "10.00 GPA - Computer Science",
           "image": "/mentors/borjan.jpg",
           "bio": "Experienced mathematician with a passion for teaching calculus and discrete mathematics. Combines theoretical knowledge with practical programming applications.",
           "teachingStyle": "Connecting mathematical theory with real-world programming applications",
@@ -706,10 +793,10 @@
     "coursesIncluded": "Courses Included:",
     "whatsIncluded": "What's Included:",
     "minimum": "Minimum:",
-    "choosePackage": "Choose This Package",
+    "choosePackage": "Just Apply!",
     "mostPopular": "Most Popular",
     "premium": "Premium",
-    "save": "Save",
+    "save": "Save up to",
     "off": "OFF",
     "why": {
       "title": "Why Choose Our Packages?",
@@ -728,43 +815,43 @@
     },
     "packs": {
       "combo": {
-        "title": "Programming Combo Pack",
-        "description": "Perfect for aspiring programmers",
-        "courses": ["Structured Programming", "Algorithms and Data Structures"],
+        "title": "FEIT/MFS Combo Package",
+        "description": "Enroll in two preparations and get a 20% discount on the total price.",
+        "courses": ["Electrical Engineering Fundamentals", "Mathematics 1", "Mechanics", "Engineering Graphics"],
         "features": [
-          "2 Complete Programming Courses",
-          "4 Months of Learning",
-          "Certificate of Completion",
-          "Project Portfolio",
-          "Job Placement Assistance"
+          "2 complete preparations",
+          "6-8 days of learning",
+          "Two FEIT preparations",
+          "Two MFS preparations",
+          "Personal mentor support"
         ],
         "timeLimit": "Limited time offer"
       },
       "mathProgramming": {
-        "title": "Math + Programming Bundle",
-        "description": "Strong foundation in math and coding",
-        "courses": ["Calculus/Math 1", "Structured Programming", "Discrete Mathematics"],
+        "title": "Math + Programming Package",
+        "description": "Strong foundation in mathematics and programming",
+        "courses": ["Calculus/Mathematics 1", "Structured Programming"],
         "features": [
-          "3 Comprehensive Courses",
-          "Mathematical Foundation",
-          "Programming Skills",
-          "6 Months Access",
-          "Personal Mentor Support"
+          "2 comprehensive preparations",
+          "Mathematical foundation",
+          "Programming skills",
+          "7/8 days of lectures x 3 hours daily",
+          "Personal mentor support"
         ]
       },
       "friends": {
-        "title": "Friends Pack",
+        "title": "Friends Package",
         "description": "Bring a friend and save together",
-        "courses": ["Any Course of Choice"],
-        "originalPrice": "Per Person: 3,500 MKD",
-        "discountPrice": "Per Person: 2,800 MKD",
-        "savings": "700 MKD each",
+        "courses": ["Any preparation of choice"],
+        "originalPrice": "Per Person: 2,500 MKD",
+        "discountPrice": "Per Person: 2,000 MKD",
+        "savings": "500 MKD each",
         "features": [
-          "Choose Any Course",
-          "Study Together",
-          "Group Projects",
-          "Shared Resources",
-          "Friendship Bonus Activities"
+          "Choose any preparation",
+          "Learn together",
+          "Group projects",
+          "Shared resources",
+          "Friendship bonus activities"
         ],
         "minParticipants": "2+ friends"
       }
